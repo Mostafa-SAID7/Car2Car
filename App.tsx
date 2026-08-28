@@ -1,65 +1,100 @@
 
-import React, { useState, useEffect, createContext, useContext } from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Toaster } from './components/ui/Toaster';
-import DashboardLayout from './components/layout/DashboardLayout';
-import Landing from './components/pages/Landing';
-import Dashboard from './components/pages/Dashboard';
-import Services from './components/pages/Services';
-import Appointments from './components/pages/Appointments';
-import Vehicles from './components/pages/Vehicles';
-import Mechanics from './components/pages/Mechanics';
-import Settings from './components/pages/Settings';
-
-type Theme = 'light' | 'dark' | 'system';
-
-interface ThemeContextType {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-}
-
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+import React, { useState } from 'react';
+import { Button } from './components/ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from './components/ui/Card';
+import { Car, CheckCircle2, Wrench } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('theme') as Theme) || 'system');
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    const root = window.document.documentElement;
-    const isDark =
-      theme === 'dark' ||
-      (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    root.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const handleLogin = () => setIsAuthenticated(true);
-  const handleLogout = () => setIsAuthenticated(false);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubmitted(true);
+      setEmail('');
+      setTimeout(() => setSubmitted(false), 4000);
+    }
+  };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={!isAuthenticated ? <Landing onLogin={handleLogin} /> : <Navigate to="/dashboard" />} />
-          <Route path="/dashboard" element={isAuthenticated ? <DashboardLayout onLogout={handleLogout}><Dashboard /></DashboardLayout> : <Navigate to="/" />} />
-          <Route path="/services" element={isAuthenticated ? <DashboardLayout onLogout={handleLogout}><Services /></DashboardLayout> : <Navigate to="/" />} />
-          <Route path="/appointments" element={isAuthenticated ? <DashboardLayout onLogout={handleLogout}><Appointments /></DashboardLayout> : <Navigate to="/" />} />
-          <Route path="/vehicles" element={isAuthenticated ? <DashboardLayout onLogout={handleLogout}><Vehicles /></DashboardLayout> : <Navigate to="/" />} />
-          <Route path="/mechanics" element={isAuthenticated ? <DashboardLayout onLogout={handleLogout}><Mechanics /></DashboardLayout> : <Navigate to="/" />} />
-          <Route path="/settings" element={isAuthenticated ? <DashboardLayout onLogout={handleLogout}><Settings /></DashboardLayout> : <Navigate to="/" />} />
-          <Route path="*" element={<Navigate to={isAuthenticated ? "/dashboard" : "/"} />} />
-        </Routes>
-      </HashRouter>
-      <Toaster />
-    </ThemeContext.Provider>
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+      <div className="max-w-4xl mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Car className="size-10 text-blue-400" />
+            <h1 className="text-4xl font-bold">AutoCare Pro</h1>
+          </div>
+          <p className="text-lg text-slate-300">Professional car maintenance and repair services</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <Card className="bg-slate-800 border-slate-700">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="size-5 text-green-400" />
+                <CardTitle>Expert Mechanics</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-slate-300">
+              Certified professionals with years of experience in car maintenance and repairs.
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-800 border-slate-700">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Wrench className="size-5 text-blue-400" />
+                <CardTitle>Full Service Range</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-slate-300">
+              From diagnostics to repairs, we handle all types of automotive services.
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-800 border-slate-700">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Car className="size-5 text-orange-400" />
+                <CardTitle>Fast Turnaround</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-slate-300">
+              Quick service appointments to get you back on the road as fast as possible.
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card className="bg-slate-800 border-slate-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl">Get Started Today</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 px-4 py-2 rounded-md bg-slate-700 border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+              <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
+                Subscribe
+              </Button>
+            </form>
+            {submitted && (
+              <p className="text-green-400 mt-3">Thanks for subscribing! Check your email for updates.</p>
+            )}
+          </CardContent>
+        </Card>
+
+        <div className="text-center text-slate-400 text-sm">
+          <p>&copy; 2024 AutoCare Pro. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
   );
 };
 
