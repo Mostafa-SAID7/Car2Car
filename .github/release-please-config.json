@@ -1,0 +1,12 @@
+{
+  "release-type": "node",
+  "package-name": "fusion-vue-tailwind-starter",
+  "include-component-in-tag": false,
+  "include-v-in-tag": true,
+  "changelog-sections": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Bug fixes" },
+    { "type": "perf", "section": "Performance" },
+    { "type": "revert", "section": "Reverts" }
+  ]
+}

@@ -1,0 +1,19 @@
+'area: ui':
+  - changed-files:
+      - any-glob-to-any-file: ['src/components/**/*.vue', 'src/pages/**/*.vue', 'src/assets/**/*']
+
+'area: data':
+  - changed-files:
+      - any-glob-to-any-file: ['src/data/**/*', 'src/mocks/**/*', 'src/types/**/*']
+
+'area: tooling':
+  - changed-files:
+      - any-glob-to-any-file: ['package.json', 'package-lock.json', '*.config.*', 'tsconfig*.json']
+
+'area: ci':
+  - changed-files:
+      - any-glob-to-any-file: ['.github/**/*']
+
+'area: tests':
+  - changed-files:
+      - any-glob-to-any-file: ['**/__tests__/**/*', '**/*.spec.ts', '**/*.test.ts']
