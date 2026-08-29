@@ -186,7 +186,7 @@ function resetSearch() {
       </div>
       <div class="mt-6 grid gap-6 sm:grid-cols-3">
         <div>
-          <p class="filter-label">Brand</p>
+          <p class="block mb-[10px] text-[11px] font-bold text-[#a8afba]">Brand</p>
           <div class="space-y-2">
             <label
               v-for="brand in brands"
@@ -195,20 +195,26 @@ function resetSearch() {
               ><input
                 type="checkbox"
                 :checked="selectedBrands.includes(brand)"
-                class="filter-checkbox"
+                class="h-[15px] w-[15px] accent-[#f5a710]"
                 @change="toggleBrand(brand)"
               />{{ brand }}</label
             >
           </div>
         </div>
         <label
-          ><span class="filter-label">Viscosity (SAE)</span
-          ><select v-model="selectedViscosity" class="filter-select">
+          ><span class="block mb-[10px] text-[11px] font-bold text-[#a8afba]">Viscosity (SAE)</span
+          ><select
+            v-model="selectedViscosity"
+            class="w-full h-[42px] border border-white/10 rounded-[10px] bg-[#0f1216] px-3 text-[#f4f5f7] text-[12px] outline-none focus:border-[#f5a710]"
+          >
             <option v-for="viscosity in viscosities" :key="viscosity">{{ viscosity }}</option>
           </select></label
         ><label
-          ><span class="filter-label">Base formula</span
-          ><select v-model="selectedBase" class="filter-select">
+          ><span class="block mb-[10px] text-[11px] font-bold text-[#a8afba]">Base formula</span
+          ><select
+            v-model="selectedBase"
+            class="w-full h-[42px] border border-white/10 rounded-[10px] bg-[#0f1216] px-3 text-[#f4f5f7] text-[12px] outline-none focus:border-[#f5a710]"
+          >
             <option v-for="base in bases" :key="base">{{ base }}</option>
           </select></label
         >
@@ -217,8 +223,12 @@ function resetSearch() {
         class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08] pt-5"
       >
         <label class="flex items-center gap-2 text-xs text-[#A8AFBA]"
-          ><input v-model="onlyAvailable" type="checkbox" class="filter-checkbox" /> Available
-          now</label
+          ><input
+            v-model="onlyAvailable"
+            type="checkbox"
+            class="h-[15px] w-[15px] accent-[#f5a710]"
+          />
+          Available now</label
         ><button class="text-xs font-bold text-[#F5A710]" @click="clearFilters">
           Clear all filters
         </button>
@@ -313,32 +323,3 @@ function resetSearch() {
     </div>
   </div>
 </template>
-
-<style scoped>
-.filter-label {
-  display: block;
-  margin-bottom: 10px;
-  color: #a8afba;
-  font-size: 11px;
-  font-weight: 700;
-}
-.filter-select {
-  width: 100%;
-  height: 42px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  background: #0f1216;
-  padding: 0 12px;
-  color: #f4f5f7;
-  font-size: 12px;
-  outline: none;
-}
-.filter-select:focus {
-  border-color: #f5a710;
-}
-.filter-checkbox {
-  height: 15px;
-  width: 15px;
-  accent-color: #f5a710;
-}
-</style>

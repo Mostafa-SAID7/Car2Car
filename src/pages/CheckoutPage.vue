@@ -93,27 +93,37 @@ function placeOrder() {
             </div>
             <div class="mt-5 grid gap-4 sm:grid-cols-2">
               <label class="sm:col-span-2"
-                ><span class="field-label">Email</span
+                ><span class="block mb-2 text-[11px] font-semibold text-[#a8afba]">Email</span
                 ><input
                   v-model="form.email"
                   type="email"
-                  class="field-input"
+                  class="w-full h-[46px] border border-white/10 rounded-xl bg-[#0f1216] px-3.5 text-white outline-none text-[13px] focus:border-[#f5a710] placeholder:text-[#68707d]"
                   placeholder="alex@email.com" /></label
               ><label class="sm:col-span-2"
-                ><span class="field-label">Full name</span
-                ><input v-model="form.name" class="field-input" placeholder="Alex Morgan" /></label
+                ><span class="block mb-2 text-[11px] font-semibold text-[#a8afba]">Full name</span
+                ><input
+                  v-model="form.name"
+                  class="w-full h-[46px] border border-white/10 rounded-xl bg-[#0f1216] px-3.5 text-white outline-none text-[13px] focus:border-[#f5a710] placeholder:text-[#68707d]"
+                  placeholder="Alex Morgan" /></label
               ><label class="sm:col-span-2"
-                ><span class="field-label">Street address</span
+                ><span class="block mb-2 text-[11px] font-semibold text-[#a8afba]"
+                  >Street address</span
                 ><input
                   v-model="form.street"
-                  class="field-input"
+                  class="w-full h-[46px] border border-white/10 rounded-xl bg-[#0f1216] px-3.5 text-white outline-none text-[13px] focus:border-[#f5a710] placeholder:text-[#68707d]"
                   placeholder="14 Grand Avenue" /></label
               ><label
-                ><span class="field-label">City</span
-                ><input v-model="form.city" class="field-input" placeholder="Cairo" /></label
+                ><span class="block mb-2 text-[11px] font-semibold text-[#a8afba]">City</span
+                ><input
+                  v-model="form.city"
+                  class="w-full h-[46px] border border-white/10 rounded-xl bg-[#0f1216] px-3.5 text-white outline-none text-[13px] focus:border-[#f5a710] placeholder:text-[#68707d]"
+                  placeholder="Cairo" /></label
               ><label
-                ><span class="field-label">Postal code</span
-                ><input v-model="form.postalCode" class="field-input" placeholder="11511"
+                ><span class="block mb-2 text-[11px] font-semibold text-[#a8afba]">Postal code</span
+                ><input
+                  v-model="form.postalCode"
+                  class="w-full h-[46px] border border-white/10 rounded-xl bg-[#0f1216] px-3.5 text-white outline-none text-[13px] focus:border-[#f5a710] placeholder:text-[#68707d]"
+                  placeholder="11511"
               /></label>
             </div>
           </div>
@@ -127,11 +137,11 @@ function placeOrder() {
               <span class="ml-auto text-[10px] text-[#58D5E6]">Secure</span>
             </div>
             <label class="mt-5 block"
-              ><span class="field-label">Card number</span
+              ><span class="block mb-2 text-[11px] font-semibold text-[#a8afba]">Card number</span
               ><input
                 v-model="form.card"
                 inputmode="numeric"
-                class="field-input"
+                class="w-full h-[46px] border border-white/10 rounded-xl bg-[#0f1216] px-3.5 text-white outline-none text-[13px] focus:border-[#f5a710] placeholder:text-[#68707d]"
                 placeholder="4242 4242 4242 4242"
             /></label>
           </div>
@@ -172,30 +182,3 @@ function placeOrder() {
     </div>
   </div>
 </template>
-
-<style scoped>
-.field-label {
-  display: block;
-  margin-bottom: 8px;
-  color: #a8afba;
-  font-size: 11px;
-  font-weight: 600;
-}
-.field-input {
-  width: 100%;
-  height: 46px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  background: #0f1216;
-  padding: 0 14px;
-  color: white;
-  outline: none;
-  font-size: 13px;
-}
-.field-input:focus {
-  border-color: #f5a710;
-}
-.field-input::placeholder {
-  color: #68707d;
-}
-</style>

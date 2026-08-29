@@ -103,49 +103,6 @@ button {
   border: 0;
 }
 
-[data-theme='light'] [class*='bg-[#0B0D10]'] {
-  background-color: var(--bg) !important;
-}
-[data-theme='light'] [class*='bg-[#101216]'],
-[data-theme='light'] [class*='bg-[#101318]'],
-[data-theme='light'] [class*='bg-[#111419]'],
-[data-theme='light'] [class*='bg-[#0F1216]'] {
-  background-color: var(--elevated) !important;
-}
-[data-theme='light'] [class*='bg-[#14171C]'],
-[data-theme='light'] [class*='bg-[#15191F]'],
-[data-theme='light'] [class*='bg-[#171A20]'],
-[data-theme='light'] [class*='bg-[#181c22]'],
-[data-theme='light'] [class*='bg-[#20252C]'],
-[data-theme='light'] [class*='bg-[#22262E]'] {
-  background-color: var(--panel) !important;
-}
-[data-theme='light'] [class~='text-white'] {
-  color: var(--text) !important;
-}
-[data-theme='light'] [class~='text-[#F4F5F7]'],
-[data-theme='light'] [class~='text-[#0B0D10]'] {
-  color: var(--text) !important;
-}
-[data-theme='light'] [class~='text-[#8E96A3]'] {
-  color: var(--muted) !important;
-}
-[data-theme='light'] [class~='text-[#A8AFBA]'] {
-  color: var(--soft) !important;
-}
-[data-theme='light'] [class~='border-white/[0.07]'],
-[data-theme='light'] [class~='border-white/[0.08]'],
-[data-theme='light'] [class~='border-white/10'] {
-  border-color: var(--line) !important;
-}
-[data-theme='light'] [class~='bg-white/[0.03]'],
-[data-theme='light'] [class~='bg-white/[0.04]'],
-[data-theme='light'] [class~='bg-white/[0.05]'],
-[data-theme='light'] [class~='bg-white/[0.06]'],
-[data-theme='light'] [class~='bg-white/10'] {
-  background-color: var(--glass) !important;
-}
-
 .display-font {
   font-family: 'Space Grotesk', sans-serif;
 }
