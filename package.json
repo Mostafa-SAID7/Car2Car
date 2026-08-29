@@ -1,7 +1,8 @@
 {
-  "name": "fusion-vue-tailwind-starter",
-  "version": "0.0.0",
+  "name": "motor-oil-eg",
+  "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
