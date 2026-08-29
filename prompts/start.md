@@ -18,22 +18,22 @@ make/model/year, or performance level (API, ACEA spec).
 
 ## 2. Tech Stack (strict)
 
-| Layer            | Technology                                                        |
-| ---------------- | ----------------------------------------------------------------- |
-| Framework        | Vue 3.5 + TypeScript (Composition API only, `<script setup>`)     |
-| Build Tool       | Vite 7                                                            |
-| Styling          | Tailwind CSS 3.4 + PostCSS/Autoprefixer (via `tailwind.config.js`)|
-| Fonts            | Inter (body) + Space Grotesk (display headings) – Google Fonts    |
-| UI Primitives    | Custom `Ui*.vue` components (UiButton, UiCard, UiBadge, etc.)     |
-| Icons            | `lucide-vue-next`                                                 |
-| State            | Pinia (with `pinia-plugin-persistedstate` for cart & preferences) |
-| Routing          | Vue Router 4                                                      |
-| Forms            | VeeValidate + Zod                                                 |
-| PWA              | `vite-plugin-pwa` (offline shell + install prompt)                |
-| Package Manager  | **npm** (not pnpm)                                                |
-| Linting          | ESLint 9 + Prettier                                               |
-| Type Checking    | TypeScript 5 strict + `vue-tsc`                                   |
-| Testing          | Vitest + Vue Test Utils                                           |
+| Layer           | Technology                                                         |
+| --------------- | ------------------------------------------------------------------ |
+| Framework       | Vue 3.5 + TypeScript (Composition API only, `<script setup>`)      |
+| Build Tool      | Vite 7                                                             |
+| Styling         | Tailwind CSS 3.4 + PostCSS/Autoprefixer (via `tailwind.config.js`) |
+| Fonts           | Inter (body) + Space Grotesk (display headings) – Google Fonts     |
+| UI Primitives   | Custom `Ui*.vue` components (UiButton, UiCard, UiBadge, etc.)      |
+| Icons           | `lucide-vue-next`                                                  |
+| State           | Pinia (with `pinia-plugin-persistedstate` for cart & preferences)  |
+| Routing         | Vue Router 4                                                       |
+| Forms           | VeeValidate + Zod                                                  |
+| PWA             | `vite-plugin-pwa` (offline shell + install prompt)                 |
+| Package Manager | **npm** (not pnpm)                                                 |
+| Linting         | ESLint 9 + Prettier                                                |
+| Type Checking   | TypeScript 5 strict + `vue-tsc`                                    |
+| Testing         | Vitest + Vue Test Utils                                            |
 
 **Do NOT use:** Options API, Vuex, Bootstrap, Material UI, pnpm, or TailwindCSS v4.
 
@@ -43,18 +43,18 @@ make/model/year, or performance level (API, ACEA spec).
 
 ### Color Palette (dark-first)
 
-| Token             | Value       | Usage                                   |
-| ----------------- | ----------- | --------------------------------------- |
-| `--bg` / `ink`    | `#0B0D10`   | App background                          |
-| `--panel`         | `#14171C`   | Cards, modals, bottom sheets            |
-| `--elevated`      | `#1B1F26`   | Elevated surfaces, inputs               |
-| `--input`         | `#0F1216`   | Form inputs                             |
-| `--orange`        | `#F5A710`   | Primary accent – CTAs, prices, active   |
-| `--cyan`          | `#58D5E6`   | Secondary accent – links, badges        |
-| `--text`          | `#F4F5F7`   | Primary text                            |
-| `--muted`         | `#8E96A3`   | Secondary/muted text                    |
-| `--soft`          | `#A8AFBA`   | Tertiary text                           |
-| `--line`          | `rgba(255,255,255,0.08)` | Borders                    |
+| Token          | Value                    | Usage                                 |
+| -------------- | ------------------------ | ------------------------------------- |
+| `--bg` / `ink` | `#0B0D10`                | App background                        |
+| `--panel`      | `#14171C`                | Cards, modals, bottom sheets          |
+| `--elevated`   | `#1B1F26`                | Elevated surfaces, inputs             |
+| `--input`      | `#0F1216`                | Form inputs                           |
+| `--orange`     | `#F5A710`                | Primary accent – CTAs, prices, active |
+| `--cyan`       | `#58D5E6`                | Secondary accent – links, badges      |
+| `--text`       | `#F4F5F7`                | Primary text                          |
+| `--muted`      | `#8E96A3`                | Secondary/muted text                  |
+| `--soft`       | `#A8AFBA`                | Tertiary text                         |
+| `--line`       | `rgba(255,255,255,0.08)` | Borders                               |
 
 Tailwind config extends with named colors: `ink`, `panel`, `elevated`, `orange`, `cyan`.
 
@@ -78,21 +78,21 @@ Tailwind config extends with named colors: `ink`, `panel`, `elevated`, `orange`,
 
 ## 4. Route Map
 
-| Path           | Name          | Component          | Notes                         |
-| -------------- | ------------- | ------------------ | ----------------------------- |
-| `/`            | `home`        | `HomePage.vue`     | Landing / discover            |
-| `/about`       | `about`       | `OnboardingPage.vue` | Brand story / onboarding    |
-| `/catalog`     | `catalog`     | `CatalogPage.vue`  | Main product catalog          |
-| `/search`      | `search`      | `SearchPage.vue`   | Search results                |
-| `/product/:slug` | `product`   | `ProductPage.vue`  | Product detail                |
-| `/garage`      | `garage`      | `ProfilePage.vue`  | User profile + saved vehicles |
-| `/garage/add`  | `garage-add`  | `VehiclePage.vue`  | Add / select a vehicle        |
-| `/cart`        | `cart`        | `CartPage.vue`     | Shopping bag                  |
-| `/checkout`    | `checkout`    | `CheckoutPage.vue` | Order + payment               |
-| `/delivery`    | `delivery`    | `PlaceholderPage.vue` | Delivery info              |
-| `/partners`    | `partners`    | `PlaceholderPage.vue` | B2B partner program        |
-| `/help`        | `help`        | `PlaceholderPage.vue` | Help center / contact      |
-| `/error`       | `error`       | `ErrorPage.vue`    | Error display                 |
+| Path             | Name         | Component             | Notes                         |
+| ---------------- | ------------ | --------------------- | ----------------------------- |
+| `/`              | `home`       | `HomePage.vue`        | Landing / discover            |
+| `/about`         | `about`      | `OnboardingPage.vue`  | Brand story / onboarding      |
+| `/catalog`       | `catalog`    | `CatalogPage.vue`     | Main product catalog          |
+| `/search`        | `search`     | `SearchPage.vue`      | Search results                |
+| `/product/:slug` | `product`    | `ProductPage.vue`     | Product detail                |
+| `/garage`        | `garage`     | `ProfilePage.vue`     | User profile + saved vehicles |
+| `/garage/add`    | `garage-add` | `VehiclePage.vue`     | Add / select a vehicle        |
+| `/cart`          | `cart`       | `CartPage.vue`        | Shopping bag                  |
+| `/checkout`      | `checkout`   | `CheckoutPage.vue`    | Order + payment               |
+| `/delivery`      | `delivery`   | `PlaceholderPage.vue` | Delivery info                 |
+| `/partners`      | `partners`   | `PlaceholderPage.vue` | B2B partner program           |
+| `/help`          | `help`       | `PlaceholderPage.vue` | Help center / contact         |
+| `/error`         | `error`      | `ErrorPage.vue`       | Error display                 |
 
 **Bottom navigation tabs (mobile):** Discover (`/`) · Shop (`/catalog`) · Bag (`/cart`) · Garage (`/garage`)
 
@@ -209,20 +209,20 @@ export interface Product {
   name: string
   brand: string
   category: ProductCategory
-  viscosity: string          // e.g. "5W-30"
-  volume: string             // e.g. "4L", "1L"
+  viscosity: string // e.g. "5W-30"
+  volume: string // e.g. "4L", "1L"
   base: OilBase
-  price: number              // EGP
-  originalPrice?: number     // EGP – for discount display
-  rating: number             // 0–5
+  price: number // EGP
+  originalPrice?: number // EGP – for discount display
+  rating: number // 0–5
   reviewCount: number
-  images: string[]           // array of image URLs
-  image: string              // primary image URL (shortcut)
+  images: string[] // array of image URLs
+  image: string // primary image URL (shortcut)
   stock: number
   specs: Record<string, string>
   description: string
   reviews: Review[]
-  compatibleMakes: string[]  // e.g. ["Toyota","Hyundai","Kia"]
+  compatibleMakes: string[] // e.g. ["Toyota","Hyundai","Kia"]
   tags: string[]
   isBestseller?: boolean
   isNew?: boolean
@@ -237,7 +237,7 @@ export interface CartLine {
 export interface OrderAddress {
   name: string
   street: string
-  city: string        // default: Cairo
+  city: string // default: Cairo
   postalCode: string
 }
 ```
@@ -268,12 +268,12 @@ export interface OrderAddress {
 
 The brand identity uses a **consistent oil-drop SVG icon** across all surfaces:
 
-| Surface                  | File                            | Size       |
-| ------------------------ | ------------------------------- | ---------- |
-| Browser tab              | `public/motor-oil-eg-favicon.svg` | 64×64 viewBox |
-| PWA / iOS home screen    | `public/motor-oil-eg-icon.svg`  | 512×512 viewBox |
-| Header nav logo (inline) | `src/App.vue` (inline SVG)      | 28×28px rendered |
-| Legacy browsers          | `public/favicon.ico`            | 32×32 ICO  |
+| Surface                  | File                              | Size             |
+| ------------------------ | --------------------------------- | ---------------- |
+| Browser tab              | `public/motor-oil-eg-favicon.svg` | 64×64 viewBox    |
+| PWA / iOS home screen    | `public/motor-oil-eg-icon.svg`    | 512×512 viewBox  |
+| Header nav logo (inline) | `src/App.vue` (inline SVG)        | 28×28px rendered |
+| Legacy browsers          | `public/favicon.ico`              | 32×32 ICO        |
 
 **Icon design:** Amber oil-drop shape with a three-stop gradient (`#FFD659 → #F5A710 → #B87500`),
 a dark inner shadow for depth, a radial white sheen for gloss, and a highlight curve stroke.
