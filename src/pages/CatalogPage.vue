@@ -25,7 +25,8 @@ const selectedViscosity = ref('All')
 const selectedBase = ref('All')
 const selectedBrands = ref<string[]>([])
 const onlyAvailable = ref(false)
-const showFilters = ref(false)
+// Auto-open filters panel when arriving from the Brands nav link
+const showFilters = ref(route.query.filter === 'brand')
 const view = ref<'grid' | 'list'>('grid')
 const sortBy = ref<'featured' | 'price-low' | 'price-high' | 'rating'>('featured')
 const categories: Array<ProductCategory | 'All'> = [

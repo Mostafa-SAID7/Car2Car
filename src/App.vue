@@ -27,14 +27,37 @@ const cart = useCartStore()
 const ui = useUiStore()
 const mobileMenuOpen = ref(false)
 const cartLabel = computed(() => (cart.count > 0 ? `${cart.count}` : ''))
-const navItems = [
-  { label: 'Deals', to: '/catalog', name: 'catalog' },
-  { label: 'Brands', to: '/catalog', name: 'catalog' },
+
+type NavItem = {
+  label: string
+  to: string | { path: string; query?: Record<string, string> }
+  name: string
+  activeWhen?: () => boolean
+}
+
+const navItems: NavItem[] = [
+  {
+    label: 'Deals',
+    to: '/catalog',
+    name: 'catalog',
+    activeWhen: () => route.name === 'catalog' && !route.query.filter,
+  },
+  {
+    label: 'Brands',
+    to: { path: '/catalog', query: { filter: 'brand' } },
+    name: 'catalog-brands',
+    activeWhen: () => route.name === 'catalog' && route.query.filter === 'brand',
+  },
   { label: 'About Us', to: '/about', name: 'about' },
   { label: 'Delivery', to: '/delivery', name: 'delivery' },
   { label: 'Partners', to: '/partners', name: 'partners' },
   { label: 'Help', to: '/help', name: 'help' },
 ]
+
+function isNavActive(item: NavItem): boolean {
+  if (item.activeWhen) return item.activeWhen()
+  return route.name === item.name
+}
 </script>
 
 <template>
@@ -159,8 +182,8 @@ const navItems = [
                 :key="item.name"
                 :to="item.to"
                 class="text-[9px] font-medium uppercase tracking-[0.16em] text-[#68707D] transition hover:text-white"
-                :class="{ 'text-[#F5A710]': route.name === item.name }"
-                :aria-current="route.name === item.name ? 'page' : undefined"
+                :class="{ 'text-[#F5A710]': isNavActive(item) }"
+                :aria-current="isNavActive(item) ? 'page' : undefined"
                 >{{ item.label }}</RouterLink
               >
             </nav>
@@ -179,7 +202,9 @@ const navItems = [
               <RouterLink
                 to="/catalog"
                 class="rounded-lg px-3 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-[#A8AFBA]"
-                :class="{ 'bg-white/5 text-white': route.name === 'catalog' }"
+                :class="{
+                  'bg-white/5 text-white': route.name === 'catalog' && !route.query.filter,
+                }"
                 @click="mobileMenuOpen = false"
                 >Catalog</RouterLink
               ><RouterLink
@@ -187,6 +212,7 @@ const navItems = [
                 :key="item.name"
                 :to="item.to"
                 class="rounded-lg px-3 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-[#A8AFBA]"
+                :class="{ 'bg-white/5 text-white': isNavActive(item) }"
                 @click="mobileMenuOpen = false"
                 >{{ item.label }}</RouterLink
               >
