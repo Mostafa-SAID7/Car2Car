@@ -31,7 +31,7 @@ describe('Cart and checkout validation', () => {
     cart.add(products[0])
     expect(cart.count).toBe(2)
     expect(cart.subtotal).toBe(85.8)
-    expect(JSON.parse(localStorage.getItem('torque-cart') ?? '{}')[products[0].id]).toBe(2)
+    expect(JSON.parse(localStorage.getItem('motor-oil-eg-cart') ?? '{}')[products[0].id]).toBe(2)
   })
 
   it('rejects incomplete checkout details', () => {

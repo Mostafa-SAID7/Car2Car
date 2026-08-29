@@ -6,7 +6,7 @@ import { products } from '@/data/products'
 
 const router = useRouter()
 const query = ref('')
-const savedRecent = localStorage.getItem('torque-recent-searches')
+const savedRecent = localStorage.getItem('motor-oil-eg-recent-searches')
 const recent = ref<string[]>(
   savedRecent ? (JSON.parse(savedRecent) as string[]) : ['Castrol 5W-30', 'Mobil 1', 'API SP'],
 )
@@ -24,7 +24,7 @@ function useRecent(value: string) {
 }
 function clearRecent() {
   recent.value = []
-  localStorage.removeItem('torque-recent-searches')
+  localStorage.removeItem('motor-oil-eg-recent-searches')
 }
 function openShop() {
   const value = query.value.trim()
@@ -33,7 +33,7 @@ function openShop() {
     value,
     ...recent.value.filter((item) => item.toLowerCase() !== value.toLowerCase()),
   ].slice(0, 6)
-  localStorage.setItem('torque-recent-searches', JSON.stringify(recent.value))
+  localStorage.setItem('motor-oil-eg-recent-searches', JSON.stringify(recent.value))
   router.push({ path: '/shop', query: { q: value } })
 }
 </script>
@@ -46,7 +46,7 @@ function openShop() {
       ><ArrowLeft :size="15" /> Back home</RouterLink
     >
     <div class="mt-12 text-center">
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#F5A710]">Search Torque</p>
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#F5A710]">Search Motor-Oil-EG</p>
       <h1 class="display-font mt-2 text-4xl font-bold tracking-[-0.06em] text-white">
         What are you looking for<span class="text-[#F5A710]">?</span>
       </h1>

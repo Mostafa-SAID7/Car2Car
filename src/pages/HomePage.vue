@@ -42,7 +42,7 @@ const recommendedProducts = computed(() =>
         .slice(0, 4)
     : [],
 )
-const brandMarks = ['CASTROL', 'LIQUI MOLY', 'MOBIL 1', 'TOYOTA', 'MOTUL', 'SHELL']
+const brandMarks = ['CASTROL', 'MOBIL 1', 'SHELL', 'MOTUL', 'LIQUI MOLY', 'PETROMIN']
 
 function searchProducts() {
   if (search.value.trim()) router.push({ path: '/shop', query: { q: search.value.trim() } })
@@ -56,7 +56,7 @@ function searchProducts() {
     >
       <img
         :src="heroProduct.image"
-        alt="Mechanic working on a car engine"
+        alt="Motor oil products for Egyptian roads"
         class="absolute inset-0 h-full w-full object-cover object-center opacity-[0.22] grayscale"
       />
       <div
@@ -72,15 +72,15 @@ function searchProducts() {
           <p
             class="flex items-center gap-2 text-[9px] font-medium tracking-[0.08em] text-[#F5A710]"
           >
-            <span class="h-1 w-1 rounded-full bg-[#F5A710]"></span> Austin, Texas
+            <span class="h-1 w-1 rounded-full bg-[#F5A710]"></span> Cairo, Egypt
           </p>
           <p class="hidden text-[9px] font-bold tracking-[0.12em] text-[#F5A710] sm:block">
-            PRECISION FLUIDS / 2025
+            MOTOR-OIL-EG / 2025
           </p>
         </div>
         <div class="mx-auto flex flex-1 flex-col items-center justify-center text-center">
           <p class="mb-7 text-[9px] font-bold uppercase tracking-[0.34em] text-[#8E96A3]">
-            Original fluids for serious drivers
+            Premium oils for every Egyptian road
           </p>
           <h1
             class="display-font max-w-[950px] text-[clamp(3.8rem,10vw,9.2rem)] font-bold leading-[0.82] tracking-[-0.09em] text-[#F4F5F7]"
@@ -92,7 +92,7 @@ function searchProducts() {
           <p
             class="mt-8 max-w-md text-[11px] uppercase tracking-[0.22em] text-[#A8AFBA] sm:text-xs"
           >
-            Shop original oils from the brands your engine trusts
+            Shop genuine oils from the brands your engine trusts — delivered across Egypt
           </p>
           <RouterLink
             to="/vehicle"
@@ -123,7 +123,7 @@ function searchProducts() {
         <div
           class="mb-6 inline-flex items-center gap-2 rounded-full border border-[#F5A710]/25 bg-[#F5A710]/[0.08] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-[#F5A710]"
         >
-          <Sparkles :size="13" /> Precision fluids for every drive
+          <Sparkles :size="13" /> Egypt's #1 Oil Marketplace
         </div>
         <h2
           class="display-font max-w-lg text-4xl font-bold leading-[0.95] tracking-[-0.07em] text-white sm:text-6xl"
@@ -131,8 +131,8 @@ function searchProducts() {
           Less guesswork.<br /><span class="text-[#F5A710]">More miles.</span>
         </h2>
         <p class="mt-6 max-w-md text-sm leading-relaxed text-[#8E96A3]">
-          Premium oils, fluids and filters matched to your car. Find exactly what your engine needs
-          in a few taps.
+          Genuine oils, filters and fluids matched to your car. Find exactly what your engine needs
+          — fast delivery anywhere in Egypt.
         </p>
       </div>
       <form
@@ -147,7 +147,7 @@ function searchProducts() {
           id="home-search"
           v-model="search"
           type="search"
-          placeholder="Search oil, brand or viscosity"
+          placeholder="Search oil, brand or viscosity…"
           class="h-11 min-w-0 flex-1 bg-transparent px-3 text-sm text-white outline-none placeholder:text-[#68707D]"
         /><UiButton
           type="submit"
@@ -263,8 +263,8 @@ function searchProducts() {
             Your car knows best.
           </h2>
           <p class="mt-3 text-sm leading-relaxed text-[#8E96A3]">
-            Add your vehicle once and we’ll surface the exact fluids, filters, and service intervals
-            for it.
+            Add your vehicle once and we'll surface the exact fluids, filters, and service intervals
+            recommended for Egyptian road conditions.
           </p>
           <RouterLink
             to="/vehicle"
@@ -275,15 +275,15 @@ function searchProducts() {
       </div>
       <div class="rounded-[26px] border border-white/[0.08] bg-[#14171C] p-7 sm:p-10">
         <p class="mb-6 text-[10px] font-bold uppercase tracking-[0.16em] text-[#8E96A3]">
-          The Torque standard
+          The Motor-Oil-EG Standard
         </p>
         <div class="space-y-5">
           <div class="flex gap-3">
             <ShieldCheck :size="19" class="mt-0.5 shrink-0 text-[#F5A710]" />
             <div>
-              <p class="text-sm font-semibold text-white">Original, always</p>
+              <p class="text-sm font-semibold text-white">100% Genuine, always</p>
               <p class="mt-1 text-xs leading-relaxed text-[#8E96A3]">
-                Sourced from authorized distributors.
+                Sourced directly from authorized Egyptian distributors.
               </p>
             </div>
           </div>
@@ -292,16 +292,16 @@ function searchProducts() {
             <div>
               <p class="text-sm font-semibold text-white">Expert selected</p>
               <p class="mt-1 text-xs leading-relaxed text-[#8E96A3]">
-                Real specs, no confusing jargon.
+                Real specs matched to your make, model and Egyptian climate.
               </p>
             </div>
           </div>
           <div class="flex gap-3">
             <SlidersHorizontal :size="19" class="mt-0.5 shrink-0 text-[#F5A710]" />
             <div>
-              <p class="text-sm font-semibold text-white">Fast, simple fit</p>
+              <p class="text-sm font-semibold text-white">Fast nationwide delivery</p>
               <p class="mt-1 text-xs leading-relaxed text-[#8E96A3]">
-                The right product in a few taps.
+                Delivered to your door across all of Egypt.
               </p>
             </div>
           </div>

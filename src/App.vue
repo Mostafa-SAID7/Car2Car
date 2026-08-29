@@ -29,8 +29,8 @@ const mobileMenuOpen = ref(false)
 const cartLabel = computed(() => (cart.count > 0 ? `${cart.count}` : ''))
 const navItems = [
   { label: 'Deals', to: '/shop', name: 'shop' },
-  { label: 'Reviews', to: '/shop', name: 'reviews' },
-  { label: 'About', to: '/onboarding', name: 'about' },
+  { label: 'Brands', to: '/shop', name: 'brands' },
+  { label: 'About Us', to: '/onboarding', name: 'about' },
   { label: 'Delivery', to: '/checkout', name: 'delivery' },
   { label: 'Partners', to: '/profile', name: 'partners' },
   { label: 'Help', to: '/search', name: 'help' },
@@ -55,7 +55,7 @@ const navItems = [
             <div
               class="hidden items-center gap-2 text-[9px] font-medium uppercase tracking-[0.12em] text-[#8E96A3] sm:flex"
             >
-              <MapPin :size="11" class="text-[#F5A710]" /> Austin, TX
+              <MapPin :size="11" class="text-[#F5A710]" /> Cairo, EG
             </div>
             <RouterLink to="/" class="absolute left-1/2 flex -translate-x-1/2 items-center gap-2"
               ><span
@@ -64,15 +64,16 @@ const navItems = [
                 ><span
                   class="absolute h-[2px] w-5 rotate-45 rounded-full bg-[#0B0D10]"
                 ></span></span
-              ><span class="display-font text-[16px] font-bold tracking-[-0.06em] text-[#F5A710]"
-                >torque<span class="text-[#F4F5F7]">.</span></span
+              ><span class="display-font text-[15px] font-bold tracking-[-0.05em] text-[#F5A710]"
+                >MOTOR<span class="text-[#F4F5F7]">OIL</span
+                ><span class="text-[#F5A710]">.EG</span></span
               ></RouterLink
             >
             <div class="ml-auto flex items-center gap-1.5 sm:gap-2">
               <a
-                href="tel:+18008677253"
+                href="tel:+20212345678"
                 class="mr-2 hidden items-center gap-2 text-[10px] font-bold tracking-[0.1em] text-[#F5A710] lg:flex"
-                ><Phone :size="12" /> 1 800 500 84 93</a
+                ><Phone :size="12" /> +20 2 1234 5678</a
               ><RouterLink
                 to="/search"
                 aria-label="Search"

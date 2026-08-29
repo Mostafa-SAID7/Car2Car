@@ -53,7 +53,7 @@ onUnmounted(() => {
       {{
         offline
           ? 'You’re offline. Your saved garage is still available.'
-          : 'Take Torque with you. Install the app for a faster garage.'
+          : 'Take Motor-Oil-EG with you. Install the app for a faster garage.'
       }}
     </p>
     <button

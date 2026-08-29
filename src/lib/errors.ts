@@ -48,7 +48,7 @@ export function normalizeError(error: unknown, context = 'application'): AppErro
         status: 500,
         code: 'TRQ-500',
         title: 'Something needs attention',
-        message: `Torque hit an unexpected problem in ${context}. Your saved garage is safe; try again or head home.`,
+        message: `Motor-Oil-EG hit an unexpected problem in ${context}. Your saved garage is safe; try again or head home.`,
       }
 }
 
@@ -66,7 +66,7 @@ export function createNotFoundError(): AppError {
 export function reportError(error: unknown, context?: string): AppError {
   const normalized = normalizeError(error, context)
   currentError.value = normalized
-  console.error(`[Torque] ${context ?? 'application'} error`, error)
+  console.error(`[Motor-Oil-EG] ${context ?? 'application'} error`, error)
   return normalized
 }
 

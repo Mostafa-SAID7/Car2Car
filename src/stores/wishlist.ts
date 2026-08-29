@@ -1,7 +1,7 @@
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
-const saved = localStorage.getItem('torque-wishlist')
+const saved = localStorage.getItem('motor-oil-eg-wishlist')
 
 export const useWishlistStore = defineStore('wishlist', () => {
   const ids = ref<string[]>(saved ? (JSON.parse(saved) as string[]) : [])
@@ -11,7 +11,7 @@ export const useWishlistStore = defineStore('wishlist', () => {
     ids.value = ids.value.includes(id)
       ? ids.value.filter((item) => item !== id)
       : [...ids.value, id]
-    localStorage.setItem('torque-wishlist', JSON.stringify(ids.value))
+    localStorage.setItem('motor-oil-eg-wishlist', JSON.stringify(ids.value))
   }
   function has(id: string) {
     return ids.value.includes(id)

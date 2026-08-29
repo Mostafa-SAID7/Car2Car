@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 export type Theme = 'dark' | 'light'
 
-const savedTheme = localStorage.getItem('torque-theme')
+const savedTheme = localStorage.getItem('motor-oil-eg-theme')
 
 export const useUiStore = defineStore('ui', () => {
   const theme = ref<Theme>(savedTheme === 'light' ? 'light' : 'dark')
@@ -15,7 +15,7 @@ export const useUiStore = defineStore('ui', () => {
     document
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute('content', nextTheme === 'light' ? '#F4F6F8' : '#0B0D10')
-    localStorage.setItem('torque-theme', nextTheme)
+    localStorage.setItem('motor-oil-eg-theme', nextTheme)
   }
 
   function toggle() {

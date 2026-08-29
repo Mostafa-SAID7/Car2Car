@@ -5,7 +5,7 @@ import type { CartLine } from '@/types/cart'
 import type { Product } from '@/types/product'
 
 export const useCartStore = defineStore('cart', () => {
-  const items = ref<Record<string, number>>(JSON.parse(localStorage.getItem('torque-cart') ?? '{}'))
+  const items = ref<Record<string, number>>(JSON.parse(localStorage.getItem('motor-oil-eg-cart') ?? '{}'))
   const count = computed(() =>
     Object.values(items.value).reduce((total, quantity) => total + quantity, 0),
   )
@@ -46,7 +46,7 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   function persist() {
-    localStorage.setItem('torque-cart', JSON.stringify(items.value))
+    localStorage.setItem('motor-oil-eg-cart', JSON.stringify(items.value))
   }
 
   return { items, count, lines, subtotal, add, remove, clear, clearAll, quantity }

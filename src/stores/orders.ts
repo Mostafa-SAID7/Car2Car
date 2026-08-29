@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import type { Order } from '@/types/order'
 import type { CartLine, OrderAddress } from '@/types/cart'
 
-const savedOrders = localStorage.getItem('torque-orders')
+const savedOrders = localStorage.getItem('motor-oil-eg-orders')
 
 export const useOrdersStore = defineStore('orders', () => {
   const orders = ref<Order[]>(savedOrders ? (JSON.parse(savedOrders) as Order[]) : [])
@@ -19,7 +19,7 @@ export const useOrdersStore = defineStore('orders', () => {
       lines,
     }
     orders.value = [order, ...orders.value]
-    localStorage.setItem('torque-orders', JSON.stringify(orders.value))
+    localStorage.setItem('motor-oil-eg-orders', JSON.stringify(orders.value))
     return order
   }
 

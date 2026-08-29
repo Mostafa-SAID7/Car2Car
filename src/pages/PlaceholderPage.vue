@@ -20,8 +20,8 @@ defineProps<{ title: string; eyebrow: string }>()
         {{ title }}
       </h1>
       <p class="mt-3 text-sm leading-relaxed text-[#8E96A3]">
-        This part of your Torque garage is being tuned up. Keep exploring the shop while we build it
-        out.
+        This part of your Motor-Oil-EG experience is coming soon. Keep exploring the shop while we
+        build it out.
       </p>
       <RouterLink
         to="/shop"

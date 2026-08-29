@@ -62,8 +62,9 @@ function placeOrder() {
           You’re good to go<span class="text-[#F5A710]">.</span>
         </h1>
         <p class="mt-4 text-sm leading-relaxed text-[#8E96A3]">
-          Your Torque order is locked in. We’ll send tracking details to
-          {{ form.email || 'your inbox' }} shortly.
+          Your Motor-Oil-EG order is confirmed. We'll send tracking details to
+          {{ form.email || 'your inbox' }} shortly. Estimated delivery: 1-3 business days across
+          Egypt.
         </p>
         <p class="mt-3 text-[11px] font-semibold text-[#58D5E6]">Order {{ orderId }}</p>
         <RouterLink
@@ -109,10 +110,10 @@ function placeOrder() {
                   placeholder="14 Grand Avenue" /></label
               ><label
                 ><span class="field-label">City</span
-                ><input v-model="form.city" class="field-input" placeholder="Austin" /></label
+                ><input v-model="form.city" class="field-input" placeholder="Cairo" /></label
               ><label
                 ><span class="field-label">Postal code</span
-                ><input v-model="form.postalCode" class="field-input" placeholder="78701"
+                ><input v-model="form.postalCode" class="field-input" placeholder="11511"
               /></label>
             </div>
           </div>

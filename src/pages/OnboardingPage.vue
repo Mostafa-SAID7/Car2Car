@@ -12,19 +12,19 @@ const slides = [
   {
     eyebrow: '01 · Find your fit',
     title: 'The right oil. First time.',
-    copy: 'Tell us what you drive and we’ll take the guesswork out of maintenance.',
+    copy: 'Tell us what you drive and we’ll match you with the perfect oil — engineered for Egyptian roads and climate.',
     icon: CarFront,
   },
   {
     eyebrow: '02 · Shop with confidence',
-    title: 'Good fluids, better miles.',
-    copy: 'Compare real specs from the brands your engine already trusts.',
+    title: '100% Genuine. Always.',
+    copy: 'Every product on Motor-Oil-EG is sourced from authorized distributors. No counterfeits, no compromise.',
     icon: ShieldCheck,
   },
   {
-    eyebrow: '03 · Keep moving',
-    title: 'Your garage, in your pocket.',
-    copy: 'Track service essentials, save favourites, and stay ready for the road.',
+    eyebrow: '03 · Fast delivery',
+    title: 'Delivered across Egypt.',
+    copy: 'From Cairo to Alexandria, Aswan to Sinai — we deliver genuine oils and fluids to your door.',
     icon: Sparkles,
   },
 ]

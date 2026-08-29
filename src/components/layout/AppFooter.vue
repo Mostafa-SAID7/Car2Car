@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, MessageCircle, Send } from 'lucide-vue-next'
+import { ArrowRight, Facebook, Instagram, MessageCircle } from 'lucide-vue-next'
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
@@ -15,34 +15,29 @@ function subscribe() {
 <template>
   <footer class="footer-shell">
     <div class="footer-contact-grid">
-      <a href="tel:+18005008493" class="contact-card contact-card-phone">
-        <span class="contact-label">Toll-free phone</span>
-        <strong>1 800 500 84 93</strong>
+      <a href="tel:+20212345678" class="contact-card contact-card-phone">
+        <span class="contact-label">Phone</span>
+        <strong>+20 2 1234 5678</strong>
       </a>
 
       <div class="contact-card contact-card-social">
-        <span class="contact-label">Messengers</span>
-        <div class="social-icons" aria-label="Messengers">
-          <a href="https://wa.me" target="_blank" rel="noreferrer" aria-label="WhatsApp"
+        <span class="contact-label">Follow Us</span>
+        <div class="social-icons" aria-label="Social media">
+          <a href="https://wa.me/20212345678" target="_blank" rel="noreferrer" aria-label="WhatsApp"
             ><MessageCircle :size="15" :stroke-width="2.8"
           /></a>
-          <a
-            href="https://vk.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="ВКонтакте"
-            class="vk-icon"
-            >vk</a
-          >
-          <a href="https://t.me" target="_blank" rel="noreferrer" aria-label="Telegram"
-            ><Send :size="14" :stroke-width="2.8"
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"
+            ><Facebook :size="15" :stroke-width="2.8"
+          /></a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"
+            ><Instagram :size="14" :stroke-width="2.8"
           /></a>
         </div>
       </div>
 
-      <a href="mailto:hello@torque.app" class="contact-card contact-card-email">
+      <a href="mailto:info@motor-oil-eg.com" class="contact-card contact-card-email">
         <span class="contact-label">Email</span>
-        <strong>hello@torque.app</strong>
+        <strong>info@motor-oil-eg.com</strong>
       </a>
     </div>
 
@@ -59,9 +54,9 @@ function subscribe() {
               type="email"
               placeholder="Your email"
             />
-            <button type="submit" aria-label="Подписаться"><ArrowRight :size="19" /></button>
+            <button type="submit" aria-label="Subscribe"><ArrowRight :size="19" /></button>
           </form>
-          <p v-else class="subscribed-message">Thanks! You’re on the list.</p>
+          <p v-else class="subscribed-message">Thanks! You're on the list.</p>
           <label class="consent-row"
             ><input type="checkbox" required /> <span>I agree to the data policy</span></label
           >
@@ -69,7 +64,7 @@ function subscribe() {
 
         <div class="footer-links-grid">
           <div>
-            <p class="link-heading">About Torque</p>
+            <p class="link-heading">About Motor-Oil-EG</p>
             <nav>
               <RouterLink to="/onboarding">Our story</RouterLink>
               <RouterLink to="/shop">Reviews</RouterLink>
@@ -83,6 +78,7 @@ function subscribe() {
               <RouterLink to="/shop">Synthetic</RouterLink>
               <RouterLink to="/shop">Semi-synthetic</RouterLink>
               <RouterLink to="/shop">Mineral</RouterLink>
+              <RouterLink to="/shop">Filters</RouterLink>
             </nav>
           </div>
           <div>
@@ -95,9 +91,9 @@ function subscribe() {
       </div>
 
       <div class="footer-panel-bottom">
-        <RouterLink to="/" class="footer-brand">TORQUE</RouterLink>
+        <RouterLink to="/" class="footer-brand">MOTOR-OIL-EG</RouterLink>
         <div class="legal-links">
-          <span>© Torque, 2025</span>
+          <span>© Motor-Oil-EG, 2025</span>
           <a href="#">Privacy policy</a>
           <a href="#">Partner agreement</a>
         </div>
@@ -201,15 +197,9 @@ function subscribe() {
   color: #ffc233;
   transform: translateY(-1px);
 }
-.vk-icon {
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: -0.08em;
-}
 .contact-card-email strong {
-  font-size: 16px;
-  letter-spacing: 0.03em;
+  font-size: 14px;
+  letter-spacing: 0.02em;
 }
 
 .footer-panel {
