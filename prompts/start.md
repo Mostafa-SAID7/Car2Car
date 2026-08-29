@@ -1,6 +1,7 @@
 # Motor Oil Mobile Marketplace – Full Production Prompt (Vue 3)
 
 ## 1. Project Goal
+
 Build a modern, production-grade **mobile-first marketplace app** for selling motor oils, lubricants, filters and related auto fluids.
 The design inspiration is the Behance project “Motor Oil Store UX/UI” by Daria Bandurko (dark theme, premium product photography, clean cards, strong hierarchy, automotive feel).
 The app must feel premium, fast, and native-like on mobile while remaining fully responsive.
@@ -8,6 +9,7 @@ The app must feel premium, fast, and native-like on mobile while remaining fully
 Primary users: car owners who need the right oil by viscosity, brand, vehicle make/model/year, or performance level (API, ACEA, etc.).
 
 ## 2. Tech Stack (strict)
+
 - **Framework**: Vue 3 + TypeScript (Composition API only, `<script setup lang="ts">`)
 - **Build**: Vite 6+
 - **Styling**: Tailwind CSS 4 + `@tailwindcss/vite`
@@ -28,9 +30,11 @@ Primary users: car owners who need the right oil by viscosity, brand, vehicle ma
 Do **not** use Options API, Vuex, Bootstrap, Material, or any heavy component library besides shadcn-vue.
 
 ## 3. Design System & Visual Direction
+
 Extract and implement a cohesive design system from the Behance reference:
 
 ### Color Palette (dark-first)
+
 - Background: near-black / deep charcoal (#0B0D10 – #12151A)
 - Surface / Cards: #1A1D23 – #22262E
 - Primary Accent: energetic orange / amber (e.g. #F97316 or #FF6B00) – used for CTAs, prices, active states
@@ -40,12 +44,14 @@ Extract and implement a cohesive design system from the Behance reference:
 - Borders: subtle white/10 – white/5
 
 ### Typography
+
 - Headings: bold, tight tracking, modern sans (Inter or Geist)
 - Body: Inter / system-ui
 - Product names & prices: strong weight
 - Use Tailwind typography scale consistently
 
 ### Components Style
+
 - Rounded cards (rounded-2xl or rounded-xl)
 - Soft elevation / subtle borders instead of heavy shadows
 - Product cards: large product image (oil bottle), brand badge, viscosity badge (e.g. 5W-30), price, rating, “Add to cart” that turns into quantity stepper
@@ -56,6 +62,7 @@ Extract and implement a cohesive design system from the Behance reference:
 - Micro-interactions: scale on press, smooth page transitions, staggered list animations, success confetti or checkmark on add-to-cart
 
 ### Key Screens (must match the spirit of the Behance project)
+
 1. Splash + Onboarding (3 slides)
 2. Home
    - Search bar
@@ -84,58 +91,59 @@ Extract and implement a cohesive design system from the Behance reference:
 10. Empty states, error states, offline state
 
 ## 4. Folder & File Structure (strict SOLID / Clean Architecture inspired)
+
 src/
-├── app/                          # App-level (providers, router, main)
-│   ├── App.vue
-│   ├── main.ts
-│   ├── router/
-│   │   ├── index.ts
-│   │   └── routes.ts
-│   └── providers/
+├── app/ # App-level (providers, router, main)
+│ ├── App.vue
+│ ├── main.ts
+│ ├── router/
+│ │ ├── index.ts
+│ │ └── routes.ts
+│ └── providers/
 ├── assets/
-│   ├── images/
-│   ├── fonts/
-│   └── styles/
-│       ├── main.css              # Tailwind + custom properties
-│       └── themes.css
+│ ├── images/
+│ ├── fonts/
+│ └── styles/
+│ ├── main.css # Tailwind + custom properties
+│ └── themes.css
 ├── components/
-│   ├── ui/                       # shadcn-vue components (auto-generated + customized)
-│   ├── common/                   # Button variants, Loading, EmptyState, ErrorBoundary…
-│   ├── layout/                   # AppHeader, BottomNav, PageContainer, SafeArea
-│   ├── product/                  # ProductCard, ProductGrid, ProductGallery, SpecsTable
-│   ├── catalog/                  # FiltersSheet, SortSelect, CategoryChips
-│   ├── cart/                     # CartItem, CartSummary, QuantityStepper
-│   ├── vehicle/                  # VehicleSelector, VehicleBadge
-│   └── home/                     # HeroCarousel, CategoryScroll, SectionHeader
-├── composables/                  # useCart, useVehicle, useProductFilters, useDebounceSearch…
-├── features/                     # Feature-based modules (preferred over pure technical)
-│   ├── auth/
-│   ├── catalog/
-│   ├── product/
-│   ├── cart/
-│   ├── checkout/
-│   ├── vehicle/
-│   └── profile/
-├── lib/                          # Pure utilities, constants, helpers
-│   ├── utils.ts                  # cn(), formatPrice, etc.
-│   ├── constants.ts
-│   └── validators.ts
-├── stores/                       # Pinia stores
-│   ├── cart.ts
-│   ├── user.ts
-│   ├── vehicle.ts
-│   └── ui.ts
-├── types/                        # Global types & Zod schemas
-│   ├── product.ts
-│   ├── cart.ts
-│   ├── vehicle.ts
-│   └── api.ts
-├── services/                     # API layer (ofetch wrappers)
-│   ├── api.ts
-│   ├── products.ts
-│   └── orders.ts
-├── mocks/                        # MSW or simple JSON for development
-└── pages/                        # Route-level views (or views/)
+│ ├── ui/ # shadcn-vue components (auto-generated + customized)
+│ ├── common/ # Button variants, Loading, EmptyState, ErrorBoundary…
+│ ├── layout/ # AppHeader, BottomNav, PageContainer, SafeArea
+│ ├── product/ # ProductCard, ProductGrid, ProductGallery, SpecsTable
+│ ├── catalog/ # FiltersSheet, SortSelect, CategoryChips
+│ ├── cart/ # CartItem, CartSummary, QuantityStepper
+│ ├── vehicle/ # VehicleSelector, VehicleBadge
+│ └── home/ # HeroCarousel, CategoryScroll, SectionHeader
+├── composables/ # useCart, useVehicle, useProductFilters, useDebounceSearch…
+├── features/ # Feature-based modules (preferred over pure technical)
+│ ├── auth/
+│ ├── catalog/
+│ ├── product/
+│ ├── cart/
+│ ├── checkout/
+│ ├── vehicle/
+│ └── profile/
+├── lib/ # Pure utilities, constants, helpers
+│ ├── utils.ts # cn(), formatPrice, etc.
+│ ├── constants.ts
+│ └── validators.ts
+├── stores/ # Pinia stores
+│ ├── cart.ts
+│ ├── user.ts
+│ ├── vehicle.ts
+│ └── ui.ts
+├── types/ # Global types & Zod schemas
+│ ├── product.ts
+│ ├── cart.ts
+│ ├── vehicle.ts
+│ └── api.ts
+├── services/ # API layer (ofetch wrappers)
+│ ├── api.ts
+│ ├── products.ts
+│ └── orders.ts
+├── mocks/ # MSW or simple JSON for development
+└── pages/ # Route-level views (or views/)
 ├── HomePage.vue
 ├── CatalogPage.vue
 ├── ProductPage.vue
@@ -144,6 +152,7 @@ src/
 ├── ProfilePage.vue
 └── ...
 textRules:
+
 - One responsibility per file / component.
 - Prefer composition over inheritance.
 - Keep presentational components dumb; put logic in composables or stores.
@@ -234,3 +243,4 @@ Components under 150–200 lines ideally
 Consistent naming (PascalCase components, camelCase functions)
 Beautiful empty / loading / error states
 Feels like a real App Store product
+```

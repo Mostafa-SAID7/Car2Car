@@ -16,13 +16,20 @@ export const currentError = shallowRef<AppError | null>(null)
 export function normalizeError(error: unknown, context = 'application'): AppError {
   if (typeof error === 'object' && error !== null && 'kind' in error) {
     const candidate = error as Partial<AppError>
-    if (candidate.kind === 'not-found' || candidate.kind === 'network' || candidate.kind === 'validation' || candidate.kind === 'unexpected') {
+    if (
+      candidate.kind === 'not-found' ||
+      candidate.kind === 'network' ||
+      candidate.kind === 'validation' ||
+      candidate.kind === 'unexpected'
+    ) {
       return {
         kind: candidate.kind,
         status: candidate.status ?? 500,
         code: candidate.code ?? 'TRQ-500',
         title: candidate.title ?? 'Something needs attention',
-        message: candidate.message ?? 'We could not complete that request. Try again or return to the home page.',
+        message:
+          candidate.message ??
+          'We could not complete that request. Try again or return to the home page.',
       }
     }
   }
@@ -51,7 +58,8 @@ export function createNotFoundError(): AppError {
     status: 404,
     code: 'TRQ-404',
     title: 'Route not found',
-    message: 'That road does not exist in this garage. Let’s get you back to the fluids and fitment tools.',
+    message:
+      'That road does not exist in this garage. Let’s get you back to the fluids and fitment tools.',
   }
 }
 

@@ -6,12 +6,18 @@ import type { Product } from '@/types/product'
 
 export const useCartStore = defineStore('cart', () => {
   const items = ref<Record<string, number>>(JSON.parse(localStorage.getItem('torque-cart') ?? '{}'))
-  const count = computed(() => Object.values(items.value).reduce((total, quantity) => total + quantity, 0))
-  const lines = computed<CartLine[]>(() => Object.entries(items.value).flatMap(([id, quantity]) => {
-    const product = products.find((candidate) => candidate.id === id)
-    return product ? [{ product, quantity }] : []
-  }))
-  const subtotal = computed(() => lines.value.reduce((total, line) => total + line.product.price * line.quantity, 0))
+  const count = computed(() =>
+    Object.values(items.value).reduce((total, quantity) => total + quantity, 0),
+  )
+  const lines = computed<CartLine[]>(() =>
+    Object.entries(items.value).flatMap(([id, quantity]) => {
+      const product = products.find((candidate) => candidate.id === id)
+      return product ? [{ product, quantity }] : []
+    }),
+  )
+  const subtotal = computed(() =>
+    lines.value.reduce((total, line) => total + line.product.price * line.quantity, 0),
+  )
 
   function add(product: Product) {
     items.value[product.id] = (items.value[product.id] ?? 0) + 1

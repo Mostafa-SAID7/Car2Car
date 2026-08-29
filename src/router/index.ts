@@ -24,7 +24,12 @@ const router = createRouter({
     { path: '/checkout', name: 'checkout', component: CheckoutPage },
     { path: '/profile', name: 'profile', component: ProfilePage },
     { path: '/error', name: 'error', component: ErrorPage },
-    { path: '/:pathMatch(.*)*', name: 'not-found', component: ErrorPage, props: { kind: 'not-found' } },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: ErrorPage,
+      props: { kind: 'not-found' },
+    },
   ],
 })
 

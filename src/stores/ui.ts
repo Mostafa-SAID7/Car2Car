@@ -12,7 +12,9 @@ export const useUiStore = defineStore('ui', () => {
   function apply(nextTheme: Theme) {
     theme.value = nextTheme
     document.documentElement.dataset.theme = nextTheme
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', nextTheme === 'light' ? '#F4F6F8' : '#0B0D10')
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', nextTheme === 'light' ? '#F4F6F8' : '#0B0D10')
     localStorage.setItem('torque-theme', nextTheme)
   }
 

@@ -35,7 +35,14 @@ describe('Cart and checkout validation', () => {
   })
 
   it('rejects incomplete checkout details', () => {
-    const result = checkoutSchema.safeParse({ email: 'not-an-email', name: '', street: '', city: '', postalCode: '', card: '' })
+    const result = checkoutSchema.safeParse({
+      email: 'not-an-email',
+      name: '',
+      street: '',
+      city: '',
+      postalCode: '',
+      card: '',
+    })
     expect(result.success).toBe(false)
   })
 })
