@@ -1,13 +1,14 @@
 # Release process
 
-Releases are managed by Release Please from commits merged into `main` or `master`.
+Releases are created automatically by the [`release.yml`](workflows/release.yml) workflow on every push to `main` or `master`.
 
-Use Conventional Commits so changes are grouped and versions are calculated consistently:
+The workflow uses [`github-tag-action`](https://github.com/mathieudutour/github-tag-action) to bump the version tag based on Conventional Commits, then [`release-action`](https://github.com/ncipollo/release-action) to publish the GitHub release with an auto-generated changelog.
 
-- `feat:` creates a minor release
-- `fix:` creates a patch release
-- `perf:` creates a patch release
-- `feat!:` or `BREAKING CHANGE:` creates a major release
-- `docs:`, `test:`, `chore:`, and `refactor:` do not create a release by themselves
+Use Conventional Commits so versions are calculated correctly:
 
-Release Please opens one release pull request at a time. When that pull request is merged, it updates the package version and changelog, creates the corresponding `vX.Y.Z` tag, and publishes the GitHub release. The release configuration lives in `.github/release-please-config.json` and `.github/.release-please-manifest.json`. Do not create manual version tags or edit generated release commits.
+- `feat:` → minor bump (e.g. `1.1.0`)
+- `fix:` or `perf:` → patch bump (e.g. `1.0.1`)
+- `feat!:` or `BREAKING CHANGE:` → major bump (e.g. `2.0.0`)
+- `docs:`, `test:`, `chore:`, `refactor:`, `style:` → patch bump (default)
+
+Do not create manual version tags or edit generated release commits.

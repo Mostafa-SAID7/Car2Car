@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability report
-    url: https://github.com/freeplan964-cmd/Mobil-Oil-EG/security/advisories/new
+    url: https://github.com/Mostafa-SAID7/Car2Car/security/advisories/new
     about: Please report security vulnerabilities privately through GitHub Security Advisories.
