@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Primary favicon (modern browsers) -->
+    <!-- Primary favicon: oil-drop SVG (all modern browsers: Chrome, Firefox, Edge, Safari) -->
     <link rel="icon" type="image/svg+xml" href="/motor-oil-eg-favicon.svg" />
-    <!-- Fallback for legacy browsers -->
-    <link rel="alternate icon" href="/favicon.ico" />
-    <!-- Apple Touch Icon (iOS home screen) -->
-    <link rel="apple-touch-icon" href="/motor-oil-eg-icon.svg" />
+    <!-- Explicit shortcut icon forces browsers to use our ICO, never the Vue default -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!-- Apple Touch Icon (iOS home screen add-to-homescreen) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/motor-oil-eg-icon.svg" />
     <!-- PWA manifest (picks up icons from vite.config.ts) -->
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#0B0D10" />
