@@ -1,0 +1,8 @@
+# Default owners for all project files
+* @freeplan964-cmd
+
+# Application source
+/src/ @freeplan964-cmd
+
+# CI and security configuration
+/.github/ @freeplan964-cmd

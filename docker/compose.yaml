@@ -1,0 +1,16 @@
+services:
+  torque:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: torque-web:local
+    ports:
+      - '8080:8080'
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx:uid=101,gid=101
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
