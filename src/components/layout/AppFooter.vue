@@ -66,26 +66,26 @@ function subscribe() {
           <div>
             <p class="link-heading">About Motor-Oil-EG</p>
             <nav>
-              <RouterLink to="/onboarding">Our story</RouterLink>
-              <RouterLink to="/shop">Reviews</RouterLink>
-              <RouterLink to="/checkout">Delivery</RouterLink>
-              <RouterLink to="/search">Contact us</RouterLink>
+              <RouterLink to="/about">Our story</RouterLink>
+              <RouterLink to="/catalog">Reviews</RouterLink>
+              <RouterLink to="/delivery">Delivery</RouterLink>
+              <RouterLink to="/help">Contact us</RouterLink>
             </nav>
           </div>
           <div>
             <p class="link-heading">Oil catalog</p>
             <nav>
-              <RouterLink to="/shop">Synthetic</RouterLink>
-              <RouterLink to="/shop">Semi-synthetic</RouterLink>
-              <RouterLink to="/shop">Mineral</RouterLink>
-              <RouterLink to="/shop">Filters</RouterLink>
+              <RouterLink to="/catalog">Synthetic</RouterLink>
+              <RouterLink to="/catalog">Semi-synthetic</RouterLink>
+              <RouterLink to="/catalog">Mineral</RouterLink>
+              <RouterLink to="/catalog">Filters</RouterLink>
             </nav>
           </div>
           <div>
-            <RouterLink to="/profile" class="standalone-link">For partners</RouterLink>
+            <RouterLink to="/partners" class="standalone-link">For partners</RouterLink>
           </div>
           <div>
-            <RouterLink to="/search" class="standalone-link">Help center</RouterLink>
+            <RouterLink to="/help" class="standalone-link">Help center</RouterLink>
           </div>
         </div>
       </div>

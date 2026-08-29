@@ -46,7 +46,9 @@ function openShop() {
       ><ArrowLeft :size="15" /> Back home</RouterLink
     >
     <div class="mt-12 text-center">
-      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#F5A710]">Search Motor-Oil-EG</p>
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#F5A710]">
+        Search Motor-Oil-EG
+      </p>
       <h1 class="display-font mt-2 text-4xl font-bold tracking-[-0.06em] text-white">
         What are you looking for<span class="text-[#F5A710]">?</span>
       </h1>

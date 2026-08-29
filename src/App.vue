@@ -31,9 +31,9 @@ const navItems = [
   { label: 'Deals', to: '/shop', name: 'shop' },
   { label: 'Brands', to: '/shop', name: 'brands' },
   { label: 'About Us', to: '/onboarding', name: 'about' },
-  { label: 'Delivery', to: '/checkout', name: 'delivery' },
+  { label: 'Delivery', to: '/delivery', name: 'delivery' },
   { label: 'Partners', to: '/profile', name: 'partners' },
-  { label: 'Help', to: '/search', name: 'help' },
+  { label: 'Help', to: '/help', name: 'help' },
 ]
 </script>
 
@@ -92,7 +92,7 @@ const navItems = [
               >
                 <Bell :size="14" /></button
               ><RouterLink
-                to="/profile"
+                to="/garage"
                 aria-label="Profile"
                 class="hidden h-8 w-8 place-items-center rounded-md border border-white/[0.08] text-[#8E96A3] transition hover:text-white sm:grid"
                 ><UserRound :size="14" /></RouterLink
@@ -120,9 +120,9 @@ const navItems = [
           </div>
           <div class="hidden h-[50px] items-center lg:flex">
             <RouterLink
-              to="/shop"
+              to="/catalog"
               class="mr-6 inline-flex h-7 items-center gap-2 rounded-md bg-white/[0.06] px-4 text-[9px] font-bold uppercase tracking-[0.14em] text-[#A8AFBA] transition hover:bg-[#F5A710] hover:text-[#0B0D10]"
-              :class="{ 'bg-[#F5A710] text-[#0B0D10]': route.name === 'shop' }"
+              :class="{ 'bg-[#F5A710] text-[#0B0D10]': route.name === 'catalog' }"
               ><Grid2X2 :size="12" /> Catalog</RouterLink
             >
             <nav class="flex flex-1 items-center justify-center gap-7">
@@ -137,7 +137,7 @@ const navItems = [
               >
             </nav>
             <RouterLink
-              to="/vehicle"
+              to="/garage/add"
               class="ml-6 inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.14em] text-[#58D5E6] hover:text-white"
               ><CarFront :size="12" /> Fit my car</RouterLink
             >
@@ -149,9 +149,9 @@ const navItems = [
           >
             <nav class="grid grid-cols-2 gap-1">
               <RouterLink
-                to="/shop"
+                to="/catalog"
                 class="rounded-lg px-3 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-[#A8AFBA]"
-                :class="{ 'bg-white/5 text-white': route.name === 'shop' }"
+                :class="{ 'bg-white/5 text-white': route.name === 'catalog' }"
                 @click="mobileMenuOpen = false"
                 >Catalog</RouterLink
               ><RouterLink
@@ -185,9 +185,9 @@ const navItems = [
             :class="{ 'text-[#F5A710]': route.name === 'home' }"
             ><Sparkles :size="19" /><span>Discover</span></RouterLink
           ><RouterLink
-            to="/shop"
+            to="/catalog"
             class="flex flex-col items-center gap-1 text-[10px] text-[#8E96A3]"
-            :class="{ 'text-[#F5A710]': route.name === 'shop' }"
+            :class="{ 'text-[#F5A710]': route.name === 'catalog' }"
             ><Search :size="19" /><span>Shop</span></RouterLink
           ><RouterLink
             to="/cart"
@@ -200,9 +200,9 @@ const navItems = [
               >{{ cartLabel }}</span
             ></RouterLink
           ><RouterLink
-            to="/profile"
+            to="/garage"
             class="flex flex-col items-center gap-1 text-[10px] text-[#8E96A3]"
-            :class="{ 'text-[#F5A710]': route.name === 'profile' }"
+            :class="{ 'text-[#F5A710]': route.name === 'garage' }"
             ><CarFront :size="19" /><span>Garage</span></RouterLink
           >
         </div>

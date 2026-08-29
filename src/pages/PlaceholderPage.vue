@@ -24,7 +24,7 @@ defineProps<{ title: string; eyebrow: string }>()
         build it out.
       </p>
       <RouterLink
-        to="/shop"
+        to="/catalog"
         class="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#F5A710] px-5 py-3 text-xs font-bold text-[#0B0D10]"
         ><ArrowLeft :size="15" /> Back to the shop</RouterLink
       >

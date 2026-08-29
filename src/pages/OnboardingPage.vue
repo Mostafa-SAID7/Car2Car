@@ -72,7 +72,7 @@ function finish() {
       >Next <ArrowRight :size="17" /></UiButton
     ><RouterLink
       v-else
-      to="/vehicle"
+      to="/garage/add"
       class="mx-auto mt-10 inline-flex h-12 items-center gap-2 rounded-xl bg-[#F5A710] px-6 text-sm font-bold text-[#0B0D10] hover:bg-[#FFC233]"
       @click="finish"
       >Set up my garage <Check :size="17" /></RouterLink

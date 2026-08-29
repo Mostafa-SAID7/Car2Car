@@ -49,7 +49,7 @@ function toggleSaved() {
 <template>
   <div class="pb-12 pt-8 sm:pt-12">
     <RouterLink
-      to="/shop"
+      to="/catalog"
       class="inline-flex items-center gap-2 text-xs font-semibold text-[#8E96A3] transition hover:text-white"
       ><ArrowLeft :size="15" /> Back to shop</RouterLink
     >
@@ -163,7 +163,7 @@ function toggleSaved() {
         </div>
         <RouterLink
           v-if="!vehicleStore.vehicle"
-          to="/vehicle"
+          to="/garage/add"
           class="mt-5 flex items-center gap-2 text-xs font-semibold text-[#58D5E6]"
           ><ShieldCheck :size="16" /> Is this compatible with your car? <ChevronRight :size="14"
         /></RouterLink>

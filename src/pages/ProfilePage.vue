@@ -65,7 +65,7 @@ const menu = [
           </div>
         </div>
         <RouterLink
-          to="/vehicle"
+          to="/garage/add"
           class="mt-6 flex items-center gap-1 text-xs font-bold text-white hover:text-[#58D5E6]"
           >{{ vehicle.vehicle ? 'Edit vehicle' : 'Add your vehicle' }} <ChevronRight :size="14"
         /></RouterLink>

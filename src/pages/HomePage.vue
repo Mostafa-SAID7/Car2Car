@@ -95,7 +95,7 @@ function searchProducts() {
             Shop genuine oils from the brands your engine trusts — delivered across Egypt
           </p>
           <RouterLink
-            to="/vehicle"
+            to="/garage/add"
             class="group relative mt-10 grid h-28 w-28 place-items-center rounded-full border border-white/25 bg-[#0B0D10]/40 text-[9px] font-bold uppercase tracking-[0.16em] text-[#A8AFBA] backdrop-blur-sm transition hover:border-[#F5A710] hover:text-white sm:h-32 sm:w-32"
             ><span
               class="absolute inset-[-1px] rounded-full border border-transparent border-r-[#F5A710] border-t-[#F5A710] transition group-hover:rotate-45"
@@ -164,7 +164,7 @@ function searchProducts() {
           Shop by category
         </p>
         <div class="hidden h-px flex-1 bg-white/[0.07] sm:block"></div>
-        <RouterLink to="/shop" class="shrink-0 text-[11px] font-semibold text-[#58D5E6]"
+        <RouterLink to="/catalog" class="shrink-0 text-[11px] font-semibold text-[#58D5E6]"
           >View all <ArrowRight :size="13" class="ml-1 inline"
         /></RouterLink>
       </div>
@@ -197,7 +197,7 @@ function searchProducts() {
           Popular products
         </h2>
         <RouterLink
-          to="/shop"
+          to="/catalog"
           class="group hidden items-center gap-2 border-b border-[#F5A710]/50 pb-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#8E96A3] transition hover:text-white sm:flex"
           >Catalog
           <ArrowRight :size="12" class="text-[#F5A710] transition group-hover:translate-x-0.5"
@@ -207,7 +207,7 @@ function searchProducts() {
         <ProductCard v-for="product in featuredProducts" :key="product.id" :product="product" />
       </div>
       <RouterLink
-        to="/shop"
+        to="/catalog"
         class="mt-5 flex items-center justify-center gap-2 rounded-xl border border-white/10 py-3 text-xs font-semibold text-[#A8AFBA] sm:hidden"
         >View catalog <ArrowRight :size="14"
       /></RouterLink>
@@ -233,7 +233,7 @@ function searchProducts() {
           </p>
         </div>
         <RouterLink
-          to="/shop"
+          to="/catalog"
           class="hidden items-center gap-1 text-xs font-semibold text-[#8E96A3] hover:text-white sm:flex"
           >See all matches <ArrowRight :size="14"
         /></RouterLink>
@@ -267,7 +267,7 @@ function searchProducts() {
             recommended for Egyptian road conditions.
           </p>
           <RouterLink
-            to="/vehicle"
+            to="/garage/add"
             class="mt-6 inline-flex items-center gap-2 text-xs font-bold text-white transition hover:text-[#58D5E6]"
             >Build your garage <ArrowRight :size="14"
           /></RouterLink>

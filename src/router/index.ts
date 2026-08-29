@@ -15,14 +15,33 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', name: 'home', component: HomePage },
-    { path: '/onboarding', name: 'onboarding', component: OnboardingPage },
-    { path: '/shop', name: 'shop', component: CatalogPage },
+    { path: '/about', name: 'about', component: OnboardingPage },
+    { path: '/catalog', name: 'catalog', component: CatalogPage },
     { path: '/search', name: 'search', component: SearchPage },
     { path: '/product/:slug', name: 'product', component: ProductPage },
-    { path: '/vehicle', name: 'vehicle', component: VehiclePage },
+    { path: '/garage/add', name: 'garage-add', component: VehiclePage },
     { path: '/cart', name: 'cart', component: CartPage },
     { path: '/checkout', name: 'checkout', component: CheckoutPage },
-    { path: '/profile', name: 'profile', component: ProfilePage },
+    { path: '/garage', name: 'garage', component: ProfilePage },
+    // Stubs mapped to PlaceholderPage for now
+    {
+      path: '/delivery',
+      name: 'delivery',
+      component: () => import('@/pages/PlaceholderPage.vue'),
+      props: { title: 'Delivery Info', eyebrow: 'Logistics' },
+    },
+    {
+      path: '/partners',
+      name: 'partners',
+      component: () => import('@/pages/PlaceholderPage.vue'),
+      props: { title: 'Partner Program', eyebrow: 'B2B' },
+    },
+    {
+      path: '/help',
+      name: 'help',
+      component: () => import('@/pages/PlaceholderPage.vue'),
+      props: { title: 'Help Center', eyebrow: 'Support' },
+    },
     { path: '/error', name: 'error', component: ErrorPage },
     {
       path: '/:pathMatch(.*)*',
