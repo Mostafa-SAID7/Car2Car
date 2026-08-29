@@ -89,6 +89,11 @@ function clearFilters() {
   selectedBrands.value = []
   onlyAvailable.value = false
 }
+
+function resetSearch() {
+  query.value = ''
+  clearFilters()
+}
 </script>
 
 <template>
@@ -302,10 +307,7 @@ function clearFilters() {
       <p class="mt-2 text-sm text-[#8E96A3]">
         Try a different brand, viscosity, or filter combination.
       </p>
-      <button
-        class="mt-5 text-xs font-bold text-[#F5A710]"
-        @click="query = ''; clearFilters()"
-      >
+      <button class="mt-5 text-xs font-bold text-[#F5A710]" @click="resetSearch">
         Clear search
       </button>
     </div>
