@@ -28,11 +28,11 @@ const ui = useUiStore()
 const mobileMenuOpen = ref(false)
 const cartLabel = computed(() => (cart.count > 0 ? `${cart.count}` : ''))
 const navItems = [
-  { label: 'Deals', to: '/shop', name: 'shop' },
-  { label: 'Brands', to: '/shop', name: 'brands' },
-  { label: 'About Us', to: '/onboarding', name: 'about' },
+  { label: 'Deals', to: '/catalog', name: 'catalog' },
+  { label: 'Brands', to: '/catalog', name: 'catalog' },
+  { label: 'About Us', to: '/about', name: 'about' },
   { label: 'Delivery', to: '/delivery', name: 'delivery' },
-  { label: 'Partners', to: '/profile', name: 'partners' },
+  { label: 'Partners', to: '/partners', name: 'partners' },
   { label: 'Help', to: '/help', name: 'help' },
 ]
 </script>
@@ -58,12 +58,40 @@ const navItems = [
               <MapPin :size="11" class="text-[#F5A710]" /> Cairo, EG
             </div>
             <RouterLink to="/" class="absolute left-1/2 flex -translate-x-1/2 items-center gap-2"
-              ><span
-                class="relative grid h-6 w-6 place-items-center rounded-md bg-[#F5A710] text-[#0B0D10]"
-                ><span class="absolute h-2.5 w-2.5 rounded-full border-2 border-[#0B0D10]"></span
-                ><span
-                  class="absolute h-[2px] w-5 rotate-45 rounded-full bg-[#0B0D10]"
-                ></span></span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                class="h-7 w-7 shrink-0"
+                aria-hidden="true"
+              >
+                <defs>
+                  <linearGradient id="logoDropGrad" x1="0" y1="0" x2="0.5" y2="1">
+                    <stop offset="0%" stop-color="#FFD659" />
+                    <stop offset="50%" stop-color="#F5A710" />
+                    <stop offset="100%" stop-color="#B87500" />
+                  </linearGradient>
+                  <radialGradient id="logoSheen" cx="38%" cy="28%" r="50%">
+                    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+                <rect width="64" height="64" rx="14" fill="#0B0D10" />
+                <path
+                  d="M32 6 C32 6,10 30,10 43 C10 55.7,20.2 62,32 62 C43.8 62,54 55.7,54 43 C54 30,32 6,32 6 Z"
+                  fill="url(#logoDropGrad)"
+                />
+                <path
+                  d="M32 6 C32 6,10 30,10 43 C10 55.7,20.2 62,32 62 C43.8 62,54 55.7,54 43 C54 30,32 6,32 6 Z"
+                  fill="url(#logoSheen)"
+                />
+                <path
+                  d="M18 42 C17 36,21 29,27 23"
+                  stroke="white"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                  fill="none"
+                  opacity="0.42"
+                /></svg
               ><span class="display-font text-[15px] font-bold tracking-[-0.05em] text-[#F5A710]"
                 >MOTOR<span class="text-[#F4F5F7]">OIL</span
                 ><span class="text-[#F5A710]">.EG</span></span
