@@ -109,7 +109,7 @@ function openShop() {
             ><span class="mt-1 block text-[11px] text-[#8E96A3]"
               >{{ product.brand }} · {{ product.viscosity }}</span
             ></span
-          ><span class="text-sm font-bold text-white">${{ product.price.toFixed(2) }}</span>
+          ><span class="text-sm font-bold text-white">EGP {{ product.price.toFixed(2) }}</span>
         </button>
       </div>
       <div v-else class="py-12 text-center">

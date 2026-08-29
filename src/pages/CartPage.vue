@@ -78,7 +78,7 @@ const shipping = 0
                   </button>
                 </div>
                 <strong class="text-sm text-white"
-                  >${{ (line.product.price * line.quantity).toFixed(2) }}</strong
+                  >EGP {{ (line.product.price * line.quantity).toFixed(2) }}</strong
                 >
               </div>
             </div>
@@ -89,7 +89,7 @@ const shipping = 0
         <h2 class="display-font text-xl font-bold text-white">Order summary</h2>
         <div class="mt-6 space-y-3 border-b border-white/[0.08] pb-5 text-xs">
           <div class="flex justify-between text-[#8E96A3]">
-            <span>Subtotal</span><span class="text-white">${{ cart.subtotal.toFixed(2) }}</span>
+            <span>Subtotal</span><span class="text-white">EGP {{ cart.subtotal.toFixed(2) }}</span>
           </div>
           <div class="flex justify-between text-[#8E96A3]">
             <span>Shipping</span><span class="text-[#58D5E6]">Free</span>
@@ -98,7 +98,7 @@ const shipping = 0
         <div class="mt-5 flex justify-between">
           <span class="text-sm font-semibold text-white">Total</span
           ><strong class="display-font text-2xl text-white"
-            >${{ (cart.subtotal + shipping).toFixed(2) }}</strong
+            >EGP {{ (cart.subtotal + shipping).toFixed(2) }}</strong
           >
         </div>
         <RouterLink

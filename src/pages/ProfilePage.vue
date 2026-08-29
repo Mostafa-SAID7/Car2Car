@@ -104,7 +104,7 @@ const menu = [
             {{ new Date(orders.orders[0].createdAt).toLocaleDateString() }}
           </p>
         </div>
-        <strong class="text-sm text-white">${{ orders.orders[0].total.toFixed(2) }}</strong>
+        <strong class="text-sm text-white">EGP {{ orders.orders[0].total.toFixed(2) }}</strong>
       </div>
     </div>
     <div class="mt-8 overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#14171C]">

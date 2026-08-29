@@ -73,10 +73,10 @@ function toggleSaved() {
       <div class="mt-4 flex items-end justify-between gap-2">
         <div class="flex flex-col leading-none">
           <span v-if="product.originalPrice" class="mb-1 text-[11px] text-white/45 line-through"
-            >${{ product.originalPrice.toFixed(2) }}</span
+            >EGP {{ product.originalPrice.toFixed(2) }}</span
           >
           <span class="display-font text-[16px] font-medium text-white"
-            >${{ product.price.toFixed(2) }}</span
+            >EGP {{ product.price.toFixed(2) }}</span
           >
         </div>
         <button

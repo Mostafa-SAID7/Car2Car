@@ -109,9 +109,9 @@ function toggleSaved() {
         </p>
         <div class="mt-7 flex items-end gap-3">
           <span class="display-font text-4xl font-bold tracking-tight text-white"
-            >${{ product.price.toFixed(2) }}</span
+            >EGP {{ product.price.toFixed(2) }}</span
           ><span v-if="product.originalPrice" class="pb-1 text-sm text-[#68707D] line-through"
-            >${{ product.originalPrice.toFixed(2) }}</span
+            >EGP {{ product.originalPrice.toFixed(2) }}</span
           ><span
             class="mb-1 rounded-full bg-[#58D5E6]/10 px-2 py-1 text-[10px] font-bold text-[#58D5E6]"
             >In stock · {{ product.stock }} left</span

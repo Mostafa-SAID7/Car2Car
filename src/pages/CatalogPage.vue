@@ -304,7 +304,7 @@ function resetSearch() {
           </p>
         </div>
         <div class="text-right">
-          <p class="text-sm font-bold text-white">${{ product.price.toFixed(2) }}</p>
+          <p class="text-sm font-bold text-white">EGP {{ product.price.toFixed(2) }}</p>
           <span class="mt-2 flex items-center justify-end gap-1 text-[11px] text-[#F5A710]"
             ><Star :size="12" fill="currentColor" stroke="none" />{{ product.rating }}</span
           >

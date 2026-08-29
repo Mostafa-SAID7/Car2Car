@@ -10,7 +10,7 @@ export const useOrdersStore = defineStore('orders', () => {
 
   function create(lines: CartLine[], address: OrderAddress, total: number) {
     const order: Order = {
-      id: `TRQ-${Date.now().toString().slice(-6)}`,
+      id: `MOEG-${Date.now().toString().slice(-6)}`,
       createdAt: new Date().toISOString(),
       status: 'Processing',
       total,

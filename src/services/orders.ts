@@ -7,7 +7,7 @@ export async function submitOrder(
   total: number,
 ): Promise<Order> {
   return Promise.resolve({
-    id: `TRQ-${Date.now().toString().slice(-6)}`,
+    id: `MOEG-${Date.now().toString().slice(-6)}`,
     createdAt: new Date().toISOString(),
     status: 'Processing',
     total,
