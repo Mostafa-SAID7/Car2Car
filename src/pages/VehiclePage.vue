@@ -36,16 +36,16 @@ function saveVehicle() {
   }
   vehicleStore.select(next)
   userStore.update({ vehicle: next })
-  router.push('/')
+  router.push('/garage')
 }
 </script>
 
 <template>
   <div class="mx-auto max-w-2xl pb-12 pt-8 sm:pt-14">
     <RouterLink
-      to="/"
+      to="/garage"
       class="inline-flex items-center gap-2 text-xs font-semibold text-[#8E96A3] hover:text-white"
-      ><ArrowLeft :size="15" /> Back home</RouterLink
+      ><ArrowLeft :size="15" /> Back to Garage</RouterLink
     >
     <div class="mt-12 text-center">
       <div

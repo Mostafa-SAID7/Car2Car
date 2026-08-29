@@ -45,7 +45,7 @@ const recommendedProducts = computed(() =>
 const brandMarks = ['CASTROL', 'MOBIL 1', 'SHELL', 'MOTUL', 'LIQUI MOLY', 'PETROMIN']
 
 function searchProducts() {
-  if (search.value.trim()) router.push({ path: '/shop', query: { q: search.value.trim() } })
+  if (search.value.trim()) router.push({ path: '/search', query: { q: search.value.trim() } })
 }
 </script>
 

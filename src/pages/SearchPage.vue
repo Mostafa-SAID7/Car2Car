@@ -34,7 +34,7 @@ function openShop() {
     ...recent.value.filter((item) => item.toLowerCase() !== value.toLowerCase()),
   ].slice(0, 6)
   localStorage.setItem('motor-oil-eg-recent-searches', JSON.stringify(recent.value))
-  router.push({ path: '/shop', query: { q: value } })
+  router.push({ path: '/search', query: { q: value } })
 }
 </script>
 

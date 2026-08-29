@@ -22,13 +22,15 @@ const selectedCategory = ref<ProductCategory | 'All'>(
   (route.query.category as ProductCategory | undefined) ?? 'All',
 )
 const selectedViscosity = ref('All')
-const selectedBase = ref('All')
+const selectedBase = ref(String(route.query.base ?? 'All'))
 const selectedBrands = ref<string[]>([])
 const onlyAvailable = ref(false)
-// Auto-open filters panel when arriving from the Brands nav link
-const showFilters = ref(route.query.filter === 'brand')
+// Auto-open filters when arriving via a deep-link (?filter, ?base, ?category)
+const showFilters = ref(!!(route.query.filter || route.query.base || route.query.category))
 const view = ref<'grid' | 'list'>('grid')
-const sortBy = ref<'featured' | 'price-low' | 'price-high' | 'rating'>('featured')
+const sortBy = ref<'featured' | 'price-low' | 'price-high' | 'rating'>(
+  route.query.sort === 'rating' ? 'rating' : 'featured',
+)
 const categories: Array<ProductCategory | 'All'> = [
   'All',
   'Engine Oil',

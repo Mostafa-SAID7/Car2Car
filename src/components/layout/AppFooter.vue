@@ -144,7 +144,7 @@ function subscribe() {
                 >Our story</RouterLink
               >
               <RouterLink
-                to="/catalog"
+                to="/catalog?sort=rating"
                 class="text-[#858585] text-[9px] no-underline transition hover:text-[#f5a710]"
                 >Reviews</RouterLink
               >
@@ -166,22 +166,22 @@ function subscribe() {
             </p>
             <nav class="flex flex-col gap-[5px]">
               <RouterLink
-                to="/catalog"
+                to="/catalog?base=Full+Synthetic"
                 class="text-[#858585] text-[9px] no-underline transition hover:text-[#f5a710]"
                 >Synthetic</RouterLink
               >
               <RouterLink
-                to="/catalog"
+                to="/catalog?base=Synthetic+Blend"
                 class="text-[#858585] text-[9px] no-underline transition hover:text-[#f5a710]"
                 >Semi-synthetic</RouterLink
               >
               <RouterLink
-                to="/catalog"
+                to="/catalog?base=Mineral"
                 class="text-[#858585] text-[9px] no-underline transition hover:text-[#f5a710]"
                 >Mineral</RouterLink
               >
               <RouterLink
-                to="/catalog"
+                to="/catalog?category=Filters"
                 class="text-[#858585] text-[9px] no-underline transition hover:text-[#f5a710]"
                 >Filters</RouterLink
               >
@@ -214,8 +214,12 @@ function subscribe() {
           class="flex flex-wrap justify-center items-center gap-x-3.5 gap-y-1.5 md:gap-x-[27px] mt-[7px] text-[#777] text-[8px] text-center"
         >
           <span>© Motor-Oil-EG, 2025</span>
-          <a href="#" class="text-inherit no-underline hover:text-[#c7c7c7]">Privacy policy</a>
-          <a href="#" class="text-inherit no-underline hover:text-[#c7c7c7]">Partner agreement</a>
+          <RouterLink to="/help" class="text-inherit no-underline hover:text-[#c7c7c7]"
+            >Privacy policy</RouterLink
+          >
+          <RouterLink to="/partners" class="text-inherit no-underline hover:text-[#c7c7c7]"
+            >Partner agreement</RouterLink
+          >
         </div>
       </div>
     </div>
