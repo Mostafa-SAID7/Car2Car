@@ -3,8 +3,8 @@
 Build and run the production image from the repository root:
 
 ```sh
-docker build --file docker/Dockerfile --tag torque-web:local .
-docker run --publish 8080:8080 torque-web:local
+docker build --file docker/Dockerfile --tag motor-oil-eg-web:local .
+docker run --publish 8080:8080 motor-oil-eg-web:local
 ```
 
 Or run the production-like Compose service:

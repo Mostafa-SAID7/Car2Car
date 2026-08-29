@@ -1,6 +1,6 @@
-# Torque — Motor Oil Marketplace
+# Motor-Oil-EG — Egyptian Motor Oil Marketplace
 
-Torque is a mobile-first marketplace for premium motor oils, lubricants, filters, and vehicle fluids. It is designed around quick fitment discovery: search by brand or viscosity, or save a vehicle and let the garage surface compatible products.
+Motor-Oil-EG is a mobile-first Egyptian marketplace for premium motor oils, lubricants, filters, and vehicle fluids. It is designed around quick fitment discovery: search by brand or viscosity, or save a vehicle and let the garage surface compatible products.
 
 ## Stack
 

@@ -1,9 +1,9 @@
 services:
-  torque:
+  motor-oil-eg:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    image: torque-web:local
+    image: motor-oil-eg-web:local
     ports:
       - '8080:8080'
     read_only: true

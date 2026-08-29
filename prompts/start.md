@@ -1,8 +1,8 @@
-# Motor Oil Mobile Marketplace – Full Production Prompt (Vue 3)
+# Motor-Oil-EG Egyptian Marketplace – Full Production Prompt (Vue 3)
 
 ## 1. Project Goal
 
-Build a modern, production-grade **mobile-first marketplace app** for selling motor oils, lubricants, filters and related auto fluids.
+Build a modern, production-grade **mobile-first marketplace app** for selling motor oils, lubricants, filters and related auto fluids specifically for the Egyptian market. Ensure references to location (Cairo) and Egyptian currency/culture are factored into the initial build.
 The design inspiration is the Behance project “Motor Oil Store UX/UI” by Daria Bandurko (dark theme, premium product photography, clean cards, strong hierarchy, automotive feel).
 The app must feel premium, fast, and native-like on mobile while remaining fully responsive.
 
@@ -218,7 +218,7 @@ Avoid over-animation – keep it premium and purposeful
 
 8. Development Commands & Tooling
 
-pnpm create vite@latest motor-oil-app --template vue-ts
+pnpm create vite@latest motor-oil-eg --template vue-ts
 Install all packages listed above
 Set up shadcn-vue properly (npx shadcn-vue@latest init)
 Configure Tailwind with CSS variables for the design tokens
@@ -229,7 +229,7 @@ Pre-commit hooks (husky + lint-staged) optional but recommended
 9. Deliverables
 
 Fully working Vue 3 app with the structure above
-Mock data that looks realistic (popular brands: Castrol, Mobil, Shell, Total, Motul, Liqui Moly, etc.)
+Mock data that looks realistic for the Egyptian market (popular brands: Castrol, Mobil 1, Shell, Total, Motul, Liqui Moly, Petromin) with prices in EGP.
 All major screens wired with navigation
 Clean, readable, well-commented code following the rules
 README with setup instructions, architecture explanation, and design decisions

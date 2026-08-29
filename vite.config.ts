@@ -13,10 +13,10 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'torque-icon.svg'],
+      includeAssets: ['favicon.ico', 'motor-oil-eg-icon.svg'],
       manifest: {
-        name: 'Torque — Fluids for the drive',
-        short_name: 'Torque',
+        name: 'Motor-Oil-EG — Fluids for the drive',
+        short_name: 'Motor-Oil-EG',
         description: 'Premium oils, fluids and filters matched to your car.',
         theme_color: '#0B0D10',
         background_color: '#0B0D10',
@@ -24,13 +24,13 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: '/torque-icon.svg',
+            src: '/motor-oil-eg-icon.svg',
             sizes: '192x192',
             type: 'image/svg+xml',
             purpose: 'any maskable',
           },
           {
-            src: '/torque-icon.svg',
+            src: '/motor-oil-eg-icon.svg',
             sizes: '512x512',
             type: 'image/svg+xml',
             purpose: 'any maskable',
