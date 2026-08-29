@@ -304,10 +304,7 @@ function clearFilters() {
       </p>
       <button
         class="mt-5 text-xs font-bold text-[#F5A710]"
-        @click="
-          query = ''
-          clearFilters()
-        "
+        @click="query = ''; clearFilters()"
       >
         Clear search
       </button>
