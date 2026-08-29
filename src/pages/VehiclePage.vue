@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { ArrowLeft, CarFront, Check } from 'lucide-vue-next'
 import { RouterLink, useRouter } from 'vue-router'
+import { UiSelect } from '@/components/ui'
 import { useUserStore } from '@/stores/user'
 import { useVehicleStore } from '@/stores/vehicle'
 
@@ -12,14 +13,18 @@ const make = ref(vehicleStore.vehicle?.make ?? '')
 const model = ref(vehicleStore.vehicle?.model ?? '')
 const year = ref(String(vehicleStore.vehicle?.year ?? ''))
 const engine = ref(vehicleStore.vehicle?.engine ?? '')
-const makes = [
-  { make: 'BMW', models: ['3 Series', '5 Series', 'X3'] },
-  { make: 'Ford', models: ['Focus', 'Mustang', 'F-150'] },
-  { make: 'Toyota', models: ['Corolla', 'Camry', 'RAV4'] },
-  { make: 'Volkswagen', models: ['Golf', 'Tiguan', 'Passat'] },
-]
-const models = computed(() => makes.find((item) => item.make === make.value)?.models ?? [])
+const makes = ['BMW', 'Ford', 'Toyota', 'Volkswagen']
+
+const modelsByMake: Record<string, string[]> = {
+  BMW: ['3 Series', '5 Series', 'X3'],
+  Ford: ['Focus', 'Mustang', 'F-150'],
+  Toyota: ['Corolla', 'Camry', 'RAV4'],
+  Volkswagen: ['Golf', 'Tiguan', 'Passat'],
+}
+
+const models = computed(() => (make.value ? (modelsByMake[make.value] ?? []) : []))
 const years = ['2024', '2023', '2022', '2021', '2020', '2019', '2018']
+const engines = ['1.5L Turbo', '2.0L Turbo', '2.5L Hybrid', '3.0L V6']
 const canSave = computed(() => Boolean(make.value && model.value && year.value && engine.value))
 function saveVehicle() {
   if (!canSave.value) return
@@ -63,47 +68,34 @@ function saveVehicle() {
       <div class="grid gap-5 sm:grid-cols-2">
         <label class="block"
           ><span class="mb-2 block text-[11px] font-semibold text-[#A8AFBA]">Make</span
-          ><select
+          ><UiSelect
             v-model="make"
-            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none focus:border-[#F5A710]"
-          >
-            <option disabled value="">Choose make</option>
-            <option v-for="item in makes" :key="item.make" :value="item.make">
-              {{ item.make }}
-            </option>
-          </select></label
+            :options="makes"
+            placeholder="Choose make"
+            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none transition focus:border-[#F5A710] focus:ring-1 focus:ring-[#F5A710]/50" /></label
         ><label class="block"
           ><span class="mb-2 block text-[11px] font-semibold text-[#A8AFBA]">Model</span
-          ><select
+          ><UiSelect
             v-model="model"
             :disabled="!make"
-            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none focus:border-[#F5A710] disabled:opacity-40"
-          >
-            <option disabled value="">Choose model</option>
-            <option v-for="item in models" :key="item" :value="item">{{ item }}</option>
-          </select></label
+            :options="models"
+            placeholder="Choose model"
+            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none transition focus:border-[#F5A710] focus:ring-1 focus:ring-[#F5A710]/50 disabled:opacity-40" /></label
         ><label class="block"
           ><span class="mb-2 block text-[11px] font-semibold text-[#A8AFBA]">Year</span
-          ><select
+          ><UiSelect
             v-model="year"
-            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none focus:border-[#F5A710]"
-          >
-            <option disabled value="">Choose year</option>
-            <option v-for="item in years" :key="item" :value="item">{{ item }}</option>
-          </select></label
+            :options="years"
+            placeholder="Choose year"
+            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none transition focus:border-[#F5A710] focus:ring-1 focus:ring-[#F5A710]/50" /></label
         ><label class="block"
           ><span class="mb-2 block text-[11px] font-semibold text-[#A8AFBA]">Engine</span
-          ><select
+          ><UiSelect
             v-model="engine"
-            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none focus:border-[#F5A710]"
-          >
-            <option disabled value="">Choose engine</option>
-            <option>1.5L Turbo</option>
-            <option>2.0L Turbo</option>
-            <option>2.5L Hybrid</option>
-            <option>3.0L V6</option>
-          </select></label
-        >
+            :options="engines"
+            placeholder="Choose engine"
+            class="h-12 w-full rounded-xl border border-white/10 bg-[#0F1216] px-4 text-sm text-white outline-none transition focus:border-[#F5A710] focus:ring-1 focus:ring-[#F5A710]/50"
+        /></label>
       </div>
       <button
         :disabled="!canSave"

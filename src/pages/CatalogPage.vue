@@ -12,6 +12,7 @@ import {
 } from 'lucide-vue-next'
 import { RouterLink, useRoute } from 'vue-router'
 import ProductCard from '@/components/product/ProductCard.vue'
+import { UiSelect } from '@/components/ui'
 import { products } from '@/data/products'
 import type { ProductCategory } from '@/types/product'
 
@@ -38,6 +39,12 @@ const categories: Array<ProductCategory | 'All'> = [
 const viscosities = ['All', '0W-20', '5W-30', '5W-40', '75W-90', '50/50']
 const bases = ['All', 'Full Synthetic', 'Synthetic Blend', 'Mineral']
 const brands = [...new Set(products.map((product) => product.brand))]
+const sortOptions = [
+  { label: 'Sort: Featured', value: 'featured' },
+  { label: 'Top rated', value: 'rating' },
+  { label: 'Price: low to high', value: 'price-low' },
+  { label: 'Price: high to low', value: 'price-high' },
+]
 const activeFilterCount = computed(
   () =>
     selectedBrands.value.length +
@@ -203,21 +210,11 @@ function resetSearch() {
         </div>
         <label
           ><span class="block mb-[10px] text-[11px] font-bold text-[#a8afba]">Viscosity (SAE)</span
-          ><select
-            v-model="selectedViscosity"
-            class="w-full h-[42px] border border-white/10 rounded-[10px] bg-[#0f1216] px-3 text-[#f4f5f7] text-[12px] outline-none focus:border-[#f5a710]"
-          >
-            <option v-for="viscosity in viscosities" :key="viscosity">{{ viscosity }}</option>
-          </select></label
+          ><UiSelect v-model="selectedViscosity" :options="viscosities" /></label
         ><label
           ><span class="block mb-[10px] text-[11px] font-bold text-[#a8afba]">Base formula</span
-          ><select
-            v-model="selectedBase"
-            class="w-full h-[42px] border border-white/10 rounded-[10px] bg-[#0f1216] px-3 text-[#f4f5f7] text-[12px] outline-none focus:border-[#f5a710]"
-          >
-            <option v-for="base in bases" :key="base">{{ base }}</option>
-          </select></label
-        >
+          ><UiSelect v-model="selectedBase" :options="bases"
+        /></label>
       </div>
       <div
         class="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08] pt-5"
@@ -241,16 +238,11 @@ function resetSearch() {
       </p>
       <div class="flex items-center gap-2">
         <label class="sr-only" for="sort-products">Sort products</label
-        ><select
-          id="sort-products"
+        ><UiSelect
           v-model="sortBy"
-          class="hidden h-8 rounded-lg border border-white/10 bg-[#14171C] px-2 text-[11px] font-semibold text-[#A8AFBA] outline-none sm:block"
-        >
-          <option value="featured">Sort: Featured</option>
-          <option value="rating">Top rated</option>
-          <option value="price-low">Price: low to high</option>
-          <option value="price-high">Price: high to low</option></select
-        ><button
+          :options="sortOptions"
+          class="hidden h-8 w-[160px] rounded-lg border border-white/10 bg-[#14171C] px-2 text-[11px] font-semibold text-[#A8AFBA] outline-none transition focus:border-[#F5A710] focus:ring-1 focus:ring-[#F5A710]/50 sm:flex"
+        /><button
           aria-label="Grid view"
           :aria-pressed="view === 'grid'"
           class="grid h-8 w-8 place-items-center rounded-lg"
